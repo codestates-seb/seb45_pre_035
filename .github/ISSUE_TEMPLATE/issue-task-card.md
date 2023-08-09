@@ -1,6 +1,6 @@
 ---
-name: Tickets template
-about: Tickets
+name: Issue Task Card
+about: Issue Task Card
 title: "[FE] [BE]"
 labels: ''
 assignees: ''
