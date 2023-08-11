@@ -1,5 +1,6 @@
 {
   "name": "client",
+<<<<<<< HEAD
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,4 +45,14 @@
     "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0"
   }
+=======
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+>>>>>>> 4d5567eb1d63bb5d20c8d058f9c7a3a5b33ae225
 }
