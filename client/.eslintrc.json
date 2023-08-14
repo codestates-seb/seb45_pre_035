@@ -4,6 +4,7 @@
     "es2021": true
   },
   "extends": [
+    "react-app",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:import/recommended",
@@ -18,14 +19,21 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"], // Add your custom paths here
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    }
+  },
   "rules": {
-    "react/react-in-jsx-scope": 0,
-    "react/jsx-uses-react": 0,
     "prettier/prettier": [
       "error",
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "import/no-unresolved": "error"
   }
 }
