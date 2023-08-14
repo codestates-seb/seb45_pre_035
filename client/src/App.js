@@ -7,7 +7,7 @@ import NewQuestion from './Pages/NewQuestion';
 import QuestionDetail from './Pages/QuestionDetail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const App = () => {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -20,6 +20,4 @@ const App = () => {
       </Routes>
     </BrowserRouter>
   );
-};
-
-export default App;
+}
