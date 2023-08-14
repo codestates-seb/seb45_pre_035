@@ -1,6 +1,5 @@
+import { styled } from 'styled-components';
 import React from 'react';
-import styled from 'styled-components';
-
 const SignInBox = styled.div`
   width: 480px;
   height: 720px;
@@ -23,11 +22,11 @@ export default function SignIn() {
       <SignInBox>
         <div className="title">로그인</div>
         <div>
-          <img src="/images/ic-outline-email.png"></img>
+          <img src="/images/ic-outline-email.png" alt=""></img>
           <input type="text"></input>
         </div>
         <div>
-          <img src="/images/mdi-password-outline.png"></img>
+          <img src="/images/mdi-password-outline.png" alt=""></img>
           <input type="password"></input>
         </div>
       </SignInBox>

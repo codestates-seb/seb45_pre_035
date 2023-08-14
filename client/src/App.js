@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import React from 'react';
 import Home from './Pages/Home';
 import MyPage from './Pages/MyPage';
 import SignIn from './Pages/SignIn';
