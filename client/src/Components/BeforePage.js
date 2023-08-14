@@ -1,4 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { styled } from 'styled-components';
+const Button = styled.div`
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border: 2px solid #3f2305;
+  background-color: transparent;
+`;
 
 const BeforePage = () => {
   const navigate = useNavigate();
@@ -8,8 +17,9 @@ const BeforePage = () => {
   };
   return (
     <div>
-      <img src={'/images/BeforePageImage.png'} alt="뒤로가기 버튼"></img>
-      <button onClick={goBack}>이전 페이지로 이동</button>
+      <Button onClick={goBack}>
+        <img src={'/images/BeforePageImage.png'} alt="뒤로가기 버튼"></img>
+      </Button>
     </div>
   );
 };
