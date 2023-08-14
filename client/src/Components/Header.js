@@ -1,17 +1,33 @@
 import styled from 'styled-components';
 
 // components
-import TitleLogo from './TitleLogo';
-import NewQuestion form './NewQuestion';
+import Home from './Home';
+import NewQuestion from './NewQuestion';
 import SignIn from './SignIn';
 import MyPage from './MyPage';
-import { Route,Routes,Link } from 'react-router-dom';
+
+const HeaderContainer = styled.header`
+  display: flex;
+  width: 74px;
+  height: 32px;
+  padding: 16px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  background-color: #ccc;
+`;
 
 const Header = () => {
   return (
-    <div>
-      <Link to=
-    </div>
+    <HeaderContainer>
+      <>
+        <Home />
+        <NewQuestion />
+        <MyPage />
+        <SignIn />
+      </>
+    </HeaderContainer>
   );
 };
 

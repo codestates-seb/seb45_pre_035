@@ -11,7 +11,7 @@
     "plugin:prettier/recommended",
     "plugin:storybook/recommended"
   ],
-  "plugins": ["unused-imports"],
+
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -26,17 +26,6 @@
       "error",
       {
         "endOfLine": "auto"
-      }
-    ],
-    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
       }
     ]
   }
