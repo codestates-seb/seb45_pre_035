@@ -8,8 +8,10 @@
     "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
   ],
+  "plugins": ["unused-imports"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -19,6 +21,23 @@
   },
   "rules": {
     "react/react-in-jsx-scope": 0,
-    "react/jsx-uses-react": 0
+    "react/jsx-uses-react": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
   }
 }
