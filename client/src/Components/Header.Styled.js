@@ -39,19 +39,21 @@ export const ButtonContainer = styled.div`
   flex-shrink: 0;
 `;
 export const Button = styled.button`
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 74px;
   height: 32px;
-  text-align: center;
+  padding: 0;
   border-radius: 19px;
   background: #3f2305;
   color: #fff;
   font-family: Inter;
-  font-size: 15px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
+  border: unset;
 `;

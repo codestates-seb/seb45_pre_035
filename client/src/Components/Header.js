@@ -36,7 +36,7 @@ const Header = () => {
       <ButtonContainer>
         <Button onClick={newquestion}>질문 작성</Button>
         <Button onClick={mypage}>내 질문</Button>
-        <Button onClick={signin}>SignIn</Button>
+        <Button onClick={signin}>Sign In</Button>
       </ButtonContainer>
     </HeaderContainer>
   );
