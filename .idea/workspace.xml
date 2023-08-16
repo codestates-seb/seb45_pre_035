@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="" />
+    <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/fungction/BrowserHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +35,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -34,13 +49,18 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2TpZ3LexpTFnqEEllWRPxGNLKiN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "seongwon",
     "last_opened_file_path": "C:/Users/CHANGHOME/coding_fun/preproject_back/seb45_pre_035",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -70,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1691741784417</updated>
       <workItem from="1691741786779" duration="1451000" />
-      <workItem from="1692153310090" duration="1512000" />
+      <workItem from="1692153310090" duration="5720000" />
     </task>
     <servers />
   </component>
