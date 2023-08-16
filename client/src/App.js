@@ -7,13 +7,12 @@ import SignUp from './Pages/SignUp';
 import NewQuestion from './Pages/NewQuestion';
 import QuestionDetail from './Pages/QuestionDetail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-//header
 import Header from './Components/Header';
-
+import GlobalStyles from './GlobalStyles';
 export default function App() {
   return (
     <>
+      <GlobalStyles />
       <BrowserRouter>
         <Header />
         <Routes>

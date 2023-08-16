@@ -1,35 +1,32 @@
-import { styled } from 'styled-components';
 import React from 'react';
-const SignInBox = styled.div`
-  width: 480px;
-  height: 720px;
-  flex-shrink: 0;
-  border: 2px solid #3f2305;
-  background: #f5f5f5;
-
-  .title {
-    color: #000;
-    font-family: Inter;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-`;
+import { Button } from '../Components/Button';
+import { SignInBox } from './styles/SignInBox';
+import { PageStyle } from './styles/PageStyle';
+import { useState } from 'react';
 export default function SignIn() {
+  const [id, setId] = useState('');
+  const onChangeHandler = (e) => {
+    setId(e.target.value);
+  };
   return (
-    <div>
+    <PageStyle>
       <SignInBox>
-        <div className="title">로그인</div>
-        <div>
-          <img src="/images/ic-outline-email.png" alt=""></img>
-          <input type="text"></input>
+        <div className="top">
+          <div className="title">로그인</div>
+          <div className="input-container">
+            <img src="/images/ic-outline-email.png" alt=""></img>
+            <input type="text" onChange={onChangeHandler} value={id}></input>
+          </div>
+          <div className="input-container">
+            <img src="/images/mdi-password-outline.png" alt=""></img>
+            <input type="password"></input>
+          </div>
         </div>
-        <div>
-          <img src="/images/mdi-password-outline.png" alt=""></img>
-          <input type="password"></input>
+        <div className="buttons">
+          <Button>Sign Up</Button>
+          <Button primary>Sign In</Button>
         </div>
       </SignInBox>
-    </div>
+    </PageStyle>
   );
 }

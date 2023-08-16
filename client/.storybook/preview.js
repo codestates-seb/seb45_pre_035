@@ -1,4 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
+import GlobalStyles from '../src/GlobalStyles';
 const preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -12,3 +13,12 @@ const preview = {
 };
 
 export default preview;
+
+export const decorators = [
+  (Story) => (
+    <>
+      <GlobalStyles />
+      <Story />
+    </>
+  ),
+];
