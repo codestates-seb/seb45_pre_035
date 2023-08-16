@@ -7,10 +7,10 @@ import { useNavigate } from 'react-router-dom';
 // eslint-disable-next-line import/named
 import {
   HeaderContainer,
-  Button,
   LogoContainer,
   ButtonContainer,
 } from './Header.Styled';
+import { SmallButton } from './SmallButton';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -34,9 +34,9 @@ const Header = () => {
         <div className="title">문제나우's Stack Overflow</div>
       </LogoContainer>
       <ButtonContainer>
-        <Button onClick={newquestion}>질문 작성</Button>
-        <Button onClick={mypage}>내 질문</Button>
-        <Button onClick={signin}>Sign In</Button>
+        <SmallButton onClick={newquestion}>질문 작성</SmallButton>
+        <SmallButton onClick={mypage}>내 질문</SmallButton>
+        <SmallButton onClick={signin}>Sign In</SmallButton>
       </ButtonContainer>
     </HeaderContainer>
   );
