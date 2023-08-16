@@ -26,7 +26,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"], // Add your custom paths here
+        "paths": ["src", "node_modules"], // Add your custom paths here
         "extensions": [".js", ".jsx", ".json"]
       }
     }
