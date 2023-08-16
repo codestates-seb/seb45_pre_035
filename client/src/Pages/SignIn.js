@@ -4,10 +4,18 @@ import { SignInBox } from './styles/SignInBox';
 import { PageStyle } from './styles/PageStyle';
 import { api } from '../Api/api';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+// eslint-disable-next-line no-unused-vars
+import { decrement, increment } from '../redux/counterSlice';
+
 export default function SignIn() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
+
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const onChangeHandlerId = (e) => {
@@ -29,6 +37,13 @@ export default function SignIn() {
 
   return (
     <PageStyle>
+      <button
+        aria-label="Increment value"
+        onClick={() => dispatch(increment())}
+      >
+        Increment
+      </button>
+      <span>{count}</span>
       <SignInBox>
         <div className="top">
           <div className="title">로그인</div>
