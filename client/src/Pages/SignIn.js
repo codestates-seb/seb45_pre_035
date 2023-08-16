@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import React from 'react';
 const SignInBox = styled.div`
   width: 480px;
   height: 720px;

@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Home from './Pages/Home';
 import MyPage from './Pages/MyPage';
@@ -11,6 +12,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 
 const App = () => {
+export default function App() {
   return (
     <>
       <Header />
@@ -26,6 +28,4 @@ const App = () => {
       </BrowserRouter>
     </>
   );
-};
-
-export default App;
+  };

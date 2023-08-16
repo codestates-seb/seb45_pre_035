@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 // components
 import Home from './Home';
@@ -6,23 +7,35 @@ import NewQuestion from './NewQuestion';
 import SignIn from './SignIn';
 import MyPage from './MyPage';
 
-const HeaderContainer = styled.header`
-  display: flex;
-  width: 74px;
-  height: 32px;
-  padding: 16px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  background-color: #ccc;
-`;
+const NewQuestion = () => {
+  const navigate = useNavigate();
 
+  return (
+    <MyQuestionContainer>
+      <Button
+        src="{../../public/images/NewQuestion.png}"
+        onClick={navigate('/NewQuestion')}
+      ></Button>
+    </MyQuestionContainer>
+  );
+};
+const MyPage = () => {
+  const navigate = useNavigate();
+
+  return (
+    <MyPageCotainer>
+      <Button
+        src="{../../public/images/MyPage.png}"
+        onClick={navigate('/MyPage')}
+      />
+    </MyPageCotainer>
+  );
+};
 const Header = () => {
   return (
     <HeaderContainer>
       <>
-        <Home />
+        <Button />
         <NewQuestion />
         <MyPage />
         <SignIn />
