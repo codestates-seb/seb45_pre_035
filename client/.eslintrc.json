@@ -12,10 +12,6 @@
     "plugin:prettier/recommended",
     "plugin:storybook/recommended"
   ],
-<<<<<<< HEAD
-
-=======
->>>>>>> 18eb7eb1854ae3b1a9c089cc3a4e159a7e8e5496
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -37,11 +33,7 @@
       {
         "endOfLine": "auto"
       }
-<<<<<<< HEAD
-    ]
-=======
     ],
     "import/no-unresolved": "error"
->>>>>>> 18eb7eb1854ae3b1a9c089cc3a4e159a7e8e5496
   }
 }

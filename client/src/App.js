@@ -11,12 +11,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //header
 import Header from './Components/Header';
 
-const App = () => {
 export default function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/mypage" element={<MyPage />} />
@@ -28,4 +27,4 @@ export default function App() {
       </BrowserRouter>
     </>
   );
-  };
+}
