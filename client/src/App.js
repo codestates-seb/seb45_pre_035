@@ -8,17 +8,23 @@ import NewQuestion from './Pages/NewQuestion';
 import QuestionDetail from './Pages/QuestionDetail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+//header
+import Header from './Components/Header';
+
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/mypage" element={<MyPage />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/newquestion" element={<NewQuestion />} />
-        <Route path="/questiondetail/:id" element={<QuestionDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/newquestion" element={<NewQuestion />} />
+          <Route path="/questiondetail/:id" element={<QuestionDetail />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
