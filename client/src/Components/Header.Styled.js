@@ -19,6 +19,7 @@ export const LogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
+
   .title {
     color: #3f2305;
     font-family: Inter;
@@ -26,6 +27,7 @@ export const LogoContainer = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    cursor: pointer;
   }
 `;
 export const ButtonContainer = styled.div`
@@ -38,12 +40,10 @@ export const ButtonContainer = styled.div`
 `;
 export const Button = styled.button`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 74px;
   height: 32px;
-  padding: 16px 20px;
   text-align: center;
   border-radius: 19px;
   background: #3f2305;
@@ -53,4 +53,5 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 `;

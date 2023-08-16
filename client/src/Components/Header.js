@@ -25,7 +25,7 @@ const Header = () => {
     navigate('/mypage');
   };
   const signin = () => {
-    navigate('/mypage');
+    navigate('/signin');
   };
 
   return (
@@ -34,18 +34,9 @@ const Header = () => {
         <div className="title">문제나우's Stack Overflow</div>
       </LogoContainer>
       <ButtonContainer>
-        <Button
-          src="{../../public/images/NewQuestion.png}"
-          onClick={newquestion}
-        >
-          질문 작성
-        </Button>
-        <Button src="{../../public/images/MyPage.png}" onClick={mypage}>
-          내 질문
-        </Button>
-        <Button src="{../../public/images/SignIn.png}" onClick={signin}>
-          SignIn
-        </Button>
+        <Button onClick={newquestion}>질문 작성</Button>
+        <Button onClick={mypage}>내 질문</Button>
+        <Button onClick={signin}>SignIn</Button>
       </ButtonContainer>
     </HeaderContainer>
   );
