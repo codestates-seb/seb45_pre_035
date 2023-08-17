@@ -1,4 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
+import { BrowserRouter } from 'react-router-dom';
 import GlobalStyles from '../src/GlobalStyles';
 const preview = {
   parameters: {
@@ -18,7 +19,9 @@ export const decorators = [
   (Story) => (
     <>
       <GlobalStyles />
-      <Story />
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
     </>
   ),
 ];
