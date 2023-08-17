@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { PageStyle } from './styles/PageStyle';
 // eslint-disable-next-line no-unused-vars
 import BeforePage from '../Components/BeforePage';
 import { QuestionDetailContainer } from './styles/QuestionDetailContainer';
 import { Button } from '../Components/Button';
 
-export default function QuestionDetail(props) {
-  const [question, setQuestion] = useState({});
-  useEffect(() => setQuestion(props.question), [props]);
+export default function QuestionDetail({ question }) {
+  // const [question, setQuestion] = useState({});
+  // useEffect(() => setQuestion(props.question), [props]);
   return (
     <PageStyle>
       <BeforePage></BeforePage>
