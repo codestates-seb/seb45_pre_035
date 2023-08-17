@@ -125,7 +125,7 @@ export default function SignUp() {
           </div>
           <div>
             <div className="input-container">
-              <img src="/images/ic-outline-email.png" alt=""></img>
+              <img src="/images/ph-user.png" alt=""></img>
               <input
                 type="text"
                 onChange={onChangeHandlerName}
