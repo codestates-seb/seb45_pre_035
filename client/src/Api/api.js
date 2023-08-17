@@ -13,14 +13,5 @@ export const api = (uri, method, data) => {
     data: data,
   };
 
-  axios(config)
-    .then((response) => {
-      console.log(response.data);
-      return response;
-    })
-    .catch((error) => {
-      // Handle any errors
-      console.error('Request error:', error);
-      return error;
-    });
+  return axios(config);
 };

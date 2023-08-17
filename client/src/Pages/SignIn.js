@@ -40,12 +40,19 @@ export default function SignIn() {
 
   const signIn = async () => {
     if (idIsValid && passwordIsValid) {
-      const response = await api('/signin', 'post', { id, password });
-      if (response.data.success) {
-        dispatch(setUser(response.data));
-      } else {
-        console.log('failed to signin');
-      }
+      api('/signin', 'post', { id, password })
+        .then((response) => {
+          console.log(response.data.message);
+          if (response.data.success) {
+            dispatch(setUser(response.data));
+          }
+        })
+        .catch((error) => {
+          // Handle any errors
+          console.log('failed to signin');
+          console.error('Request error:', error);
+          return error;
+        });
     }
   };
 
