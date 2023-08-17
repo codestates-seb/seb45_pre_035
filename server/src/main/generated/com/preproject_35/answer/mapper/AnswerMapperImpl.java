@@ -4,13 +4,12 @@ import com.preproject_35.answer.dto.AnswerPatchDto;
 import com.preproject_35.answer.dto.AnswerPostDto;
 import com.preproject_35.answer.dto.AnswerResponseDto;
 import com.preproject_35.answer.entity.Answer;
-import java.time.LocalDateTime;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-08-17T03:48:37+0900",
+    date = "2023-08-18T00:07:57+0900",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.19 (Azul Systems, Inc.)"
 )
 @Component
@@ -49,19 +48,10 @@ public class AnswerMapperImpl implements AnswerMapper {
             return null;
         }
 
-        Long answerId = null;
-        String content = null;
+        AnswerResponseDto answerResponseDto = new AnswerResponseDto();
 
-        answerId = answer.getAnswerId();
-        content = answer.getContent();
-
-        boolean success = false;
-        String message = null;
-        LocalDateTime createdAt = null;
-        String author = null;
-        Long memberId = null;
-
-        AnswerResponseDto answerResponseDto = new AnswerResponseDto( success, message, answerId, content, createdAt, author, memberId );
+        answerResponseDto.setAnswerId( answer.getAnswerId() );
+        answerResponseDto.setContent( answer.getContent() );
 
         return answerResponseDto;
     }

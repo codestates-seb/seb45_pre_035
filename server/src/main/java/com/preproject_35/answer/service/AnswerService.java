@@ -5,6 +5,7 @@ import com.preproject_35.answer.repository.AnswerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,9 +29,19 @@ public class AnswerService {
         return answerRepository.save(findAnswer);
     }
 
+    public Answer findAnswer(long answerId) {
+        return findVerifiedAnswer(answerId);
+    }
+
+    public List<Answer> findAllAnswer() {
+        List<Answer> answers = answerRepository.findAll();
+        return answers;
+    }
+
 
     public void deleteAnswer(long answerId) {
         Answer findAnswer = findVerifiedAnswer(answerId);
+        answerRepository.delete(findAnswer);
     }
 
     private Answer findVerifiedAnswer(long answerId) {
