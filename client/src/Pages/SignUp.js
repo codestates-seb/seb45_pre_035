@@ -76,7 +76,7 @@ export default function SignUp() {
       <BeforePage></BeforePage>
       <SignInBox>
         <div className="top">
-          <div className="title">로그인</div>
+          <div className="title">회원가입</div>
           <div>
             <div className="input-container">
               <img src="/images/ic-outline-email.png" alt=""></img>
