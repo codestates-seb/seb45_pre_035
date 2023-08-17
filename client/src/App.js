@@ -9,6 +9,7 @@ import QuestionDetail from './Pages/QuestionDetail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import GlobalStyles from './GlobalStyles';
+
 export default function App() {
   return (
     <>
