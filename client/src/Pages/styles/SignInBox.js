@@ -55,4 +55,14 @@ export const SignInBox = styled.div`
     justify-content: center;
     column-gap: 43px;
   }
+  .error-message {
+    color: #f00;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-top: 5px;
+  }
 `;
