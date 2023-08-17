@@ -6,28 +6,59 @@ import { api } from '../Api/api';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // eslint-disable-next-line no-unused-vars
-import { decrement, increment } from '../redux/counterSlice';
+import { setUser } from '../redux/userSlice';
+import BeforePage from '../Components/BeforePage';
 
 export default function SignIn() {
   const [id, setId] = useState('');
+  const [idIsValid, setIdIsValid] = useState(false);
   const [password, setPassword] = useState('');
+  const [passwordIsValid, setPasswordIsValid] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const count = useSelector((state) => state.counter.value);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const onChangeHandlerId = (e) => {
     setId(e.target.value);
+    if (e.target.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      setIdIsValid(true);
+    } else {
+      setIdIsValid(false);
+    }
   };
   const onChangeHandlerPassword = (e) => {
     setPassword(e.target.value);
+    if (e.target.value.length < 8) {
+      setPasswordIsValid(false);
+    } else {
+      setPasswordIsValid(true);
+    }
   };
 
   const signIn = async () => {
-    setLoggedIn(api('/signin', 'post', { id, password }));
+    if (idIsValid && passwordIsValid) {
+      const response = await api('/signin', 'post', { id, password });
+      if (response.data.success) {
+        dispatch(setUser(response.data));
+      } else {
+        console.log('failed to signin');
+      }
+    }
   };
+  const signUp = () => {
+    navigate('/signup');
+  };
+
+  useEffect(() => {
+    if (user.loggedIn) {
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
+    }
+  }, [user]);
 
   useEffect(() => {
     if (loggedIn) {
@@ -37,31 +68,43 @@ export default function SignIn() {
 
   return (
     <PageStyle>
-      <button
-        aria-label="Increment value"
-        onClick={() => dispatch(increment())}
-      >
-        Increment
-      </button>
-      <span>{count}</span>
+      <BeforePage></BeforePage>
       <SignInBox>
         <div className="top">
           <div className="title">로그인</div>
-          <div className="input-container">
-            <img src="/images/ic-outline-email.png" alt=""></img>
-            <input type="text" onChange={onChangeHandlerId} value={id}></input>
+          <div>
+            <div className="input-container">
+              <img src="/images/ic-outline-email.png" alt=""></img>
+              <input
+                type="text"
+                onChange={onChangeHandlerId}
+                value={id}
+                placeholder="example@email.com"
+              ></input>
+            </div>
+            {!idIsValid ? (
+              <div className="error-message">
+                유효한 이메일을 입력 해주세요.
+              </div>
+            ) : null}
           </div>
-          <div className="input-container">
-            <img src="/images/mdi-password-outline.png" alt=""></img>
-            <input
-              type="password"
-              onChange={onChangeHandlerPassword}
-              value={password}
-            ></input>
+          <div>
+            <div className="input-container">
+              <img src="/images/mdi-password-outline.png" alt=""></img>
+              <input
+                type="password"
+                onChange={onChangeHandlerPassword}
+                value={password}
+                placeholder="password"
+              ></input>
+            </div>
+            {!passwordIsValid ? (
+              <div className="error-message">비밀번호를 입력 해주세요.</div>
+            ) : null}
           </div>
         </div>
         <div className="buttons">
-          <Button>Sign Up</Button>
+          <Button onClick={signUp}>Sign Up</Button>
           <Button primary onClick={signIn}>
             Sign In
           </Button>
