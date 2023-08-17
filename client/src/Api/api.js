@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const serverUrl = 'https://github.com/codestates-seb/seb45_pre_035/ ';
+const serverUrl = 'https://github.com/codestates-seb/seb45_pre_035';
 
 export const api = (uri, method, data) => {
   const config = {
@@ -13,14 +13,5 @@ export const api = (uri, method, data) => {
     data: data,
   };
 
-  axios(config)
-    .then((response) => {
-      console.log(response.data);
-      return response;
-    })
-    .catch((error) => {
-      // Handle any errors
-      console.error('Request error:', error);
-      return error;
-    });
+  return axios(config);
 };
