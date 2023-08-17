@@ -48,16 +48,13 @@ export default function SignIn() {
       }
     }
   };
+
   const signUp = () => {
     navigate('/signup');
   };
 
   useEffect(() => {
-    if (user.loggedIn) {
-      setLoggedIn(true);
-    } else {
-      setLoggedIn(false);
-    }
+    setLoggedIn(user.loggedIn);
   }, [user]);
 
   useEffect(() => {
