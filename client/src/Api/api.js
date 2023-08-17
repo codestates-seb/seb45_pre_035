@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const serverUrl = 'https://github.com/codestates-seb/seb45_pre_035/ ';
+const serverUrl = 'https://github.com/codestates-seb/seb45_pre_035';
 
 export const api = (uri, method, data) => {
   const config = {
