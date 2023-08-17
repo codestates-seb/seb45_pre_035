@@ -20,6 +20,8 @@ export const Button = styled.button`
   font-weight: 700;
   line-height: normal;
 
+  cursor: pointer;
+
   ${(props) =>
     props.primary &&
     css`
