@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
-
-const PageStyle = styled.div`
-  /* 페이지 전체 스타일링 */
-`;
+import { Button } from '../Components/Button';
+import { PageStyle } from './styles/PageStyle';
 
 const QuestionFormContainer = styled.div`
-  /* 폼 컨테이너 스타일링 */
+  display: inline-flex;
+  height: 909px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 26px;
+  flex-shrink: 0;
 `;
 
 const TitleBox = styled.div`
@@ -20,7 +23,32 @@ const TitleBox = styled.div`
   border: 2px solid #3f2305;
   background: #f2ead3;
 `;
+const TitleBoxTitle = styled.text`
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+const TitleBoxEx = styled.text`
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
 
+const TitleBoxInput = styled.input`
+  padding-left: 10px;
+  width: 592px;
+  height: 41px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  border: 1px solid #d9d9d9;
+  background: #f5f5f5;
+`;
 const ContentBox = styled.div`
   display: flex;
   width: 649px;
@@ -34,11 +62,37 @@ const ContentBox = styled.div`
   background: #f2ead3;
 `;
 
+const ContentBoxTitle = styled.text`
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+const ContentBoxEx = styled.text`
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+
+const ContentBoxTextArea = styled.textarea`
+  padding: 10px;
+  width: 592px;
+  flex: 1 0 0;
+  border-radius: 13px;
+  border: 1px solid #d9d9d9;
+  background: #f5f5f5;
+`;
+
 const NewQuestion = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [submitEnabled, setSubmitEnabled] = useState(false);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -70,7 +124,7 @@ const NewQuestion = () => {
 
       if (response.ok) {
         const question = await response.json();
-        history.push(`/question/${question.questionId}`);
+        navigate.push(`/question/${question.questionId}`);
       } else {
         // Handle error
       }
@@ -83,11 +137,12 @@ const NewQuestion = () => {
     <PageStyle>
       <QuestionFormContainer>
         <TitleBox>
-          <h2>Title</h2>
-          <p>
+          <TitleBoxTitle>Title</TitleBoxTitle>
+          <TitleBoxEx>
             Be specific and imagine you’re asking a question to another person.
-          </p>
-          <input
+          </TitleBoxEx>
+          <TitleBoxInput
+            placeholder="e.g Is there an R function for finding the index of an element in a vector?"
             type="text"
             value={title}
             onChange={handleTitleChange}
@@ -95,13 +150,20 @@ const NewQuestion = () => {
           />
         </TitleBox>
         <ContentBox>
-          <h2>Content</h2>
-          <p>What are the details of your problem?</p>
-          <textarea value={content} onChange={handleContentChange} required />
+          <ContentBoxTitle>Content</ContentBoxTitle>
+          <ContentBoxEx>What are the details of your problem?</ContentBoxEx>
+          <ContentBoxTextArea
+            value={content}
+            onChange={handleContentChange}
+            required
+          />
         </ContentBox>
         <button onClick={handleSubmit} disabled={!submitEnabled}>
           Submit
         </button>
+        <Button primary onClick={handleSubmit}>
+          Submit
+        </Button>
       </QuestionFormContainer>
     </PageStyle>
   );
