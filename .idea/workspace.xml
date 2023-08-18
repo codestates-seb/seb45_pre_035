@@ -5,9 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/generated/com/preproject_35/answer/mapper/AnswerMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/advice/GlobalExceptionAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/controller/AnswerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerPatchDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerPostDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/entity/Answer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/mapper/AnswerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/repository/AnswerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/service/AnswerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.main.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/Preproject35Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/Preproject35Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/Answer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/AnswerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/AnswerDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/AnswerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/AnswerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +91,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "back__end",
+    "git-widget-placeholder": "Merging back__end",
     "last_opened_file_path": "C:/Users/CHANGHOME/coding_fun/preproject_back/seb45_pre_035",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -129,6 +152,13 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
+    <configuration name="Preproject35Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="preproject_35.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.preproject_35.Preproject35Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Preproject35Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="preproject_35.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="preproject_35.preproject_35.Preproject35Application" />
@@ -153,7 +183,7 @@
       <updated>1691741784417</updated>
       <workItem from="1691741786779" duration="1451000" />
       <workItem from="1692153310090" duration="8434000" />
-      <workItem from="1692231535322" duration="24310000" />
+      <workItem from="1692231535322" duration="24623000" />
     </task>
     <servers />
   </component>
