@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenRefresher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/RefreshTokenStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/java/com/preproject_35/JwtTokenizerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/function/BrowserHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenizer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/server">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2TpZ3LexpTFnqEEllWRPxGNLKiN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "seongwon",
+    "last_opened_file_path": "C:/Users/CHANGHOME/coding_fun/preproject_back/seb45_pre_035",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MTConfigurable",
+    "spring.configuration.checksum": "bf14a6a41cf7e49330a01d15f83b2c18",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Gradle.JwtTokenizerTest.testGenerateAccessToken">
+    <configuration name="JwtTokenizerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.preproject_35.JwtTokenizerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="JwtTokenizerTest.testGenerateAccessToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.preproject_35.JwtTokenizerTest.testGenerateAccessToken&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="Preproject35Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="preproject_35.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="preproject_35.preproject_35.Preproject35Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.JwtTokenizerTest.testGenerateAccessToken" />
+        <item itemvalue="Gradle.JwtTokenizerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="" />
+      <created>1691741784417</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691741784417</updated>
+      <workItem from="1691741786779" duration="1451000" />
+      <workItem from="1692153310090" duration="8434000" />
+      <workItem from="1692231535322" duration="21035000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
