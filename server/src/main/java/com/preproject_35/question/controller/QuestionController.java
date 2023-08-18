@@ -8,6 +8,7 @@ import com.preproject_35.question.entity.Question;
 import com.preproject_35.question.service.QuestionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@PreAuthorize("hasAuthority('QUESTION_WRITE')")
 @RequestMapping("/questions")
 @Validated
 public class QuestionController {

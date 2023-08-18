@@ -21,8 +21,8 @@ public class JwtAuthenticationSuccessHandler implements AuthenticationSuccessHan
     private final String base64EncodedSecretKey;
     private final JwtProperties jwtProperties;
 
-    @Value("${jwt.secret-key}")
-    private String secretKey;
+//    @Value("${jwt.secret-key}")
+//    private String secretKey;
 
     public JwtAuthenticationSuccessHandler(JwtTokenizer jwtTokenizer, JwtProperties jwtProperties) {
         this.jwtTokenizer = jwtTokenizer;

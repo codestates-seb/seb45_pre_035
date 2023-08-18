@@ -23,6 +23,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    public static final String ROLE_USER = "ROLE_USER";
+//    public static final String ROLE_ADMIN = "ROLE_ADMIN";
+
+    public static final String PERMISSION_QUESTION_WRITE = "QUESTION_WRITE";
+    public static final String PERMISSION_ANSWER_WRITE = "ANSWER_WRITE";
+    public static final String PERMISSION_COMMENT_WRITE = "COMMENT_WRITE";
+
     @Autowired
     private JwtTokenizer jwtTokenizer;
 
@@ -32,6 +39,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .authorizeRequests()
+                .antMatchers("/questions").hasAuthority(PERMISSION_QUESTION_WRITE)
+                .antMatchers("/answers").hasAuthority(PERMISSION_ANSWER_WRITE)
+                .antMatchers("/comments").hasAuthority(PERMISSION_COMMENT_WRITE)
+                .and()
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/login").permitAll() // 로그인 요청은 허용

@@ -1,10 +1,12 @@
 package com.preproject_35.security.jwt;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -26,6 +28,10 @@ import java.util.Map;
 
 @Component
 public class JwtTokenizer {
+
+//    @Value("${jwt.secret-key}")
+//    private String secretKey;
+
     // 새로운 시크릿 키를 생성하고 이를 Base64로 인코딩
     public String encodeBase64SecretKey() {
         // Create a strong secret key for HMAC-SHA256
@@ -66,6 +72,14 @@ public class JwtTokenizer {
                 .setExpiration(expiration)
                 .signWith(key)
                 .compact();
+    }
+
+    // 복호화 메서드
+    public Jws<Claims> decodeToken(String token, String base64SecretKey) {
+        byte[] keyBytes = Decoders.BASE64.decode(base64SecretKey);
+        Key key = Keys.hmacShaKeyFor(keyBytes);
+
+        return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
     }
 
 

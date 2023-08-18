@@ -39,6 +39,10 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             } catch (IllegalArgumentException ex) {
                 // 유효하지 않은 토큰인 경우 예외 처리
                 logger.warn("Invalid token: " + ex.getMessage());
+                logger.debug("Invalid token details: ", ex);
+            } catch (Exception ex) {
+                // 기타 예외 처리
+                logger.error("An error occurred while processing the token: " + ex.getMessage(), ex);
             }
         }
         // 다음 필터로 체인을 전달

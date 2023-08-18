@@ -73,5 +73,37 @@ public class JwtTokenizerTest {
         assertEquals("user", parsedToken.getBody().get("role"));
         assertEquals("user1", parsedToken.getBody().getSubject());
     }
+
+    @Test
+    public void testClaims() {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", "admin");
+        claims.put("username", "user1");
+        String subject = "user1";
+        Date expiration = new Date(System.currentTimeMillis() + 600000);
+
+        String token = tokenizer.generateAccessToken(claims, subject, expiration, base64SecretKey);
+        Jws<Claims> parsedToken = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
+
+        assertEquals("admin", parsedToken.getBody().get("role"));
+        assertEquals("user1", parsedToken.getBody().get("username"));
+    }
+
+    @Test
+    public void testDecodeToken() {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", "user");
+        String subject = "user1";
+        Date expiration = new Date(System.currentTimeMillis() + 600000); // 토큰 만료 시간: 10분 후
+
+        String token = tokenizer.generateAccessToken(claims, subject, expiration, base64SecretKey);
+        assertNotNull(token);
+
+        // 복호화 된 토큰의 클레임 값이 올바른지 검증
+        Jws<Claims> parsedToken = tokenizer.decodeToken(token, base64SecretKey);
+        assertNotNull(parsedToken);
+        assertEquals("user", parsedToken.getBody().get("role"));
+        assertEquals("user1", parsedToken.getBody().getSubject());
+    }
 }
 
