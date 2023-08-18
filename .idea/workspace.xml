@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenRefresher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/RefreshTokenStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/test/java/com/preproject_35/JwtTokenizerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/function/BrowserHistory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenizer.java" afterDir="false" />
-    </list>
+    <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,9 +18,17 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/server">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="preproject_35" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -78,11 +71,18 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MTConfigurable",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "spring.configuration.checksum": "bf14a6a41cf7e49330a01d15f83b2c18",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Gradle.JwtTokenizerTest.testGenerateAccessToken">
     <configuration name="JwtTokenizerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -132,6 +132,13 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
+    <configuration name="Preproject35Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="preproject_35.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.preproject_35.Preproject35Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Preproject35Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="preproject_35.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="preproject_35.preproject_35.Preproject35Application" />
@@ -156,7 +163,7 @@
       <updated>1691741784417</updated>
       <workItem from="1691741786779" duration="1451000" />
       <workItem from="1692153310090" duration="8434000" />
-      <workItem from="1692231535322" duration="21035000" />
+      <workItem from="1692231535322" duration="24801000" />
     </task>
     <servers />
   </component>
