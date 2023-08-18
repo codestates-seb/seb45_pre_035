@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
+<<<<<<< HEAD
   <component name="NewModuleRootManager">
+=======
+  <component name="AdditionalModuleElements">
+>>>>>>> fea4d748a703b89111be67d8fcf15441452b62d8
     <content url="file://$MODULE_DIR$/../../server/build/generated/sources/annotationProcessor/java/main">
       <sourceFolder url="file://$MODULE_DIR$/../../server/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
     </content>
