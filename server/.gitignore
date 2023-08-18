@@ -35,3 +35,12 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### conflict ###
+.DS_Store
+server/.DS_Store
+server/src/.DS_Store
+server/src/main/.DS_Store
+server/src/main/java/.DS_Store
+server/src/main/java/com/.DS_Store
+server/src/main/java/com/preproject_35/.DS_Store
