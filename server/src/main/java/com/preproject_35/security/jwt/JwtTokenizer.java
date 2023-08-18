@@ -1,9 +1,15 @@
 package com.preproject_35.security.jwt;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
@@ -70,5 +76,24 @@ public class JwtTokenizer {
         Key key = Keys.hmacShaKeyFor(keyBytes); // 디코딩된 바이트 배열로 HMAC-SHA 키를 생성
 
         return key;
+    }
+
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Autowired
+    private JwtValidator jwtValidator;
+
+    public Authentication getAuthenticationFromToken(String token) {
+        Claims claims = jwtValidator.validateToken(token);
+
+        String username = claims.getSubject();
+
+        if (username != null) {
+            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+            return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
+        }
+
+        return null;
     }
 }

@@ -1,5 +1,9 @@
 package com.preproject_35.security.jwt.config;
 
+import com.preproject_35.security.jwt.JwtAuthenticationFilter;
+import com.preproject_35.security.jwt.JwtTokenizer;
+import com.preproject_35.security.jwt.JwtValidator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,29 +23,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    /**
-     * 'user'와 'anotherUser'가 있는 이유: 시나리오 테스트를 위해서
-     */
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/login").permitAll() // 로그인 요청은 허용
-                .anyRequest().authenticated() // 나머지 요청은 인증 필요
-                .and()
-                .addFilter(new JwtAuthenticationFilter(authenticationManager())) // JwtAuthenticationFilter 추가
-                .httpBasic().disable(); // HTTP Basic 인증 비활성화
-    }
+    @Autowired
+    private JwtTokenizer jwtTokenizer;
+
+    @Autowired
+    private JwtValidator jwtValidator;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .anyRequest().hasRole("USER")
+                .antMatchers("/login").permitAll() // 로그인 요청은 허용
+                .anyRequest().hasRole("USER") // 나머지 요청은 'USER' 역할이 필요
                 .and()
-                .httpBasic();
+                .addFilter(new JwtAuthenticationFilter(authenticationManager(), jwtTokenizer, jwtValidator)) // JwtAuthenticationFilter 추가
+                .httpBasic().disable(); // HTTP Basic 인증 비활성화
     }
 
     @Bean

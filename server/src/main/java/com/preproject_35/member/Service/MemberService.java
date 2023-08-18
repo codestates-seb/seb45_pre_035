@@ -57,4 +57,7 @@ public class MemberService {
             throw new BusinessLogicException(ExceptionCode.MEMBER_EXISTS);
   }
 
+    public Optional<Member> findByEmail(String email) {
+        return memberRepository.findByEmail(email);
+    }
 }

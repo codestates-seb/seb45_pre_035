@@ -6,6 +6,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -21,8 +23,12 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
-            throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
+            throws ServletException, IOException {
+
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
+
         String token = extractTokenFromRequest(request);
 
         if (token != null) {
@@ -35,16 +41,23 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 logger.warn("Invalid token: " + ex.getMessage());
             }
         }
-
+        // 다음 필터로 체인을 전달
         chain.doFilter(request, response);
     }
 
+
     private void setAuthenticationFromToken(String token) {
         Authentication authentication = jwtTokenizer.getAuthenticationFromToken(token);
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        if (authentication != null) {
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+        }
     }
 
     private String extractTokenFromRequest(HttpServletRequest request) {
-        // 토큰 추출 로직은 이전과 동일하게 구현
+        String header = request.getHeader("Authorization");
+        if (header != null && header.startsWith("Bearer ")) {
+            return header.substring(7); // "Bearer " 다음의 토큰 부분 추출
+        }
+        return null; // 토큰이 없는 경우 null 반환
     }
 }

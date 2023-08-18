@@ -8,13 +8,15 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.stereotype.Component;
 
 import java.security.Key;
 
+@Component
 public class JwtValidator {
     private String base64EncodedSecretKey;
 
-    public JwtValidator(String base64EncodedSecretKey) {
+    public void setBase64EncodedSecretKey(String base64EncodedSecretKey) {
         this.base64EncodedSecretKey = base64EncodedSecretKey;
     }
 
