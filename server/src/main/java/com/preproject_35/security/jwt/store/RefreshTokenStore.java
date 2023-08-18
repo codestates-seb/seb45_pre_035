@@ -3,8 +3,8 @@ package com.preproject_35.security.jwt.store;
 
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 // ------------------------------------------------------------------------------------------------------
 // - 토큰 취소 및 무효화는 주로 서버 측에서 리프레시 토큰을 관리하는 방식으로 이루어진다.
@@ -19,7 +19,7 @@ import java.util.Set;
 @Component
 public class RefreshTokenStore {
 
-    private final Set<String> refreshTokenStore = new HashSet<>();
+    private final Set<String> refreshTokenStore = ConcurrentHashMap.newKeySet();
 
     public void addRefreshToken(String refreshToken) {
         refreshTokenStore.add(refreshToken);
@@ -33,4 +33,3 @@ public class RefreshTokenStore {
         return refreshTokenStore.contains(refreshToken);
     }
 }
-
