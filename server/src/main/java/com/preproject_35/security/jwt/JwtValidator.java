@@ -1,6 +1,6 @@
 // - 토큰 검증 기능 구현
 
-package com.preproject_35.security;
+package com.preproject_35.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;

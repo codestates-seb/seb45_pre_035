@@ -1,9 +1,10 @@
-package com.preproject_35.security;
+package com.preproject_35.security.jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
@@ -17,6 +18,7 @@ import java.util.Map;
 // - 토큰 발행 기능 구현
 // ----------------------
 
+@Component
 public class JwtTokenizer {
     // 새로운 시크릿 키를 생성하고 이를 Base64로 인코딩
     public String encodeBase64SecretKey() {

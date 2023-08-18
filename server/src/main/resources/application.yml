@@ -9,3 +9,5 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+  jwt:
+    expiration: 86400

@@ -1,4 +1,4 @@
-package com.preproject_35.security;
+package com.preproject_35.security.jwt;
 
 import io.jsonwebtoken.Claims;
 
