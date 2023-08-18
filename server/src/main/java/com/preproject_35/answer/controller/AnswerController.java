@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 public class AnswerController {
 
     // private final QuestionService questionService;
+    // private final MemberService memberService;
     private final AnswerService answerService;
     private final AnswerMapper answerMapper;
 
@@ -31,7 +32,7 @@ public class AnswerController {
         this.answerService = answerService;
         this.answerMapper = answerMapper;
     }
-    // 답변 등록
+    // 답변 등록, 매개변수 값에 @PathVariable questionId 추가 필요
     @PostMapping
     public ResponseEntity postAnswer(@Valid @RequestBody AnswerPostDto answerPostDto) {
 
@@ -53,7 +54,7 @@ public class AnswerController {
 //
 //        return new ResponseEntity<>(answerMapper.answerToAnswerResponseDto(response), HttpStatus.CREATED);
     }
-    // 답변 수정
+    // 답변 수정, 매개변수 값에 @PathVariable questionId 추가 필요
     @PatchMapping("/{answer-id}")
     public ResponseEntity patchAnswer(@PathVariable("answer-id") @Positive long answerId, @RequestBody AnswerPatchDto answerPatchDto) {
 
@@ -73,6 +74,7 @@ public class AnswerController {
 //        return new ResponseEntity<>(answerMapper.answerToAnswerResponseDto(response), HttpStatus.OK);
     }
 
+    // 특정 답변 조회, 매개변수 값에 @PathVariable questionId 추가 필요
     @GetMapping("/{answer-id}")
     public ResponseEntity<AnswerResponseDto> getAnswer(@PathVariable("answer-id") Long answerId) {
         Answer answer = answerService.findAnswer(answerId);
@@ -89,6 +91,7 @@ public class AnswerController {
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
+    // 전체 답변 조회, 매개변수 값에 @PathVariable questionId 추가 필요
     @GetMapping
     public ResponseEntity<List<AnswerResponseDto>> getAnswers() {
         List<Answer> answers = answerService.findAllAnswer();
@@ -130,7 +133,7 @@ public class AnswerController {
     }
 
      */
-
+    // 특정 답변 삭제, 매개변수 값에 @PathVariable questionId 추가 필요
     @DeleteMapping("/{answer-id}")
     public ResponseEntity<String> deleteAnswer(@PathVariable("answer-id") @Positive long answerId){
 
