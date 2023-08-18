@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="delegatedBuild" value="false" />
-        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
-<<<<<<< HEAD
-        <option name="gradleJvm" value="zulu-11" />
-=======
-<<<<<<< HEAD
-=======
-        <option name="gradleJvm" value="11" />
->>>>>>> jekyeong
->>>>>>> ce0f3278e3d5553c41e3061f4b272dae8e01534f
+        <option name="gradleJvm" value="openjdk-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/server" />

@@ -7,8 +7,10 @@
 <<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="zulu-11" project-jdk-type="JavaSDK">
 =======
+  <component name="ProjectRootManager" version="2" project-jdk-name="zulu-11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="zulu-11" project-jdk-type="JavaSDK">
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
->>>>>>> jekyeong
+>>>>>>> ca0e9b7deebaee7e4129a4789c38bd8e529c7970
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
