@@ -7,11 +7,12 @@ import lombok.Setter;
 @Setter
 public class MemberDto {
 
-    private long memberId;
+    //private long memberId;
     private String email;
     private String username;
     private String password;
 
+    /*
     public long getMemberId() {
         return memberId;
     }
@@ -20,6 +21,8 @@ public class MemberDto {
         this.memberId = memberId;
     }
 
+
+     */
     public String getEmail() {
         return email;
     }
