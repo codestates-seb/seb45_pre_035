@@ -1,4 +1,4 @@
-package preproject_35.preproject_35;
+package com.preproject_35;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
