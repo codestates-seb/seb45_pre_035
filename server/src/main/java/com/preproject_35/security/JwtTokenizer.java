@@ -1,32 +1,41 @@
 package com.preproject_35.security;
-
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
 
+import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
+// ----------------------
+// - 시크릿 키 생성 및 관리
+// - 토큰 발행 기능 구현
+// ----------------------
+
 public class JwtTokenizer {
-    // Base64 인코딩된 시크릿 키 문자열을 반환
-    public String encodeBase64SecretKey(String secretKey) {
-        return Encoders.BASE64.encode(secretKey.getBytes(StandardCharsets.UTF_8));
+    // 새로운 시크릿 키를 생성하고 이를 Base64로 인코딩
+    public String encodeBase64SecretKey() {
+        // Create a strong secret key for HMAC-SHA256
+        SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        return Encoders.BASE64.encode(secretKey.getEncoded());
     }
 
-    // 액세스 토큰을 생성
-    // - claims: 토큰에 추가할 클레임(정보)을 포함한 맵
-    // - subject: 토큰의 주제로 일반적으로 사용자 아이디나 이메일 주소
-    // - expiration: 토큰의 만료 시간
-    // - base64EncodedSecretKey: Base64로 인코딩된 시크릿 키 문자열
+    /** 액세스 토큰을 생성
+    * @claims: 토큰에 추가할 클레임(정보)을 포함한 맵
+    * @subject: 토큰의 주제로 일반적으로 사용자 아이디나 이메일 주소
+    * @expiration: 토큰의 만료 시간
+    * @base64EncodedSecretKey: Base64로 인코딩된 시크릿 키 문자열
+    */
     public String generateAccessToken(Map<String, Object> claims,
                                       String subject,
                                       Date expiration,
                                       String base64EncodedSecretKey) {
-        // // Base64로 인코딩된 시크릿 키로 Key 객체를 생성
+        // Base64로 인코딩된 시크릿 키로 Key 객체를 생성
         Key key = getKeyFromBase64EncodedKey(base64EncodedSecretKey);
 
         // JWT 토큰을 생성
