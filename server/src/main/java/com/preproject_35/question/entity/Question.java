@@ -23,12 +23,17 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long questionId;
+
     private long memberId; // 외래키
+
     @Column(nullable = false)
     private String title;
+
     @Column(nullable = false)
     private String content;
+
     private LocalDateTime createdAt = LocalDateTime.now();
+
     private boolean success = true;
 
     // Question 에서만 Answer 정보 조회할거니까 1:N 단방향 엔티티 매핑
@@ -36,7 +41,7 @@ public class Question {
     private List<Answer> answers = new ArrayList<>();
 
     // 추가자 : 박성원
-    @OneToOne(mappedBy = "question", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "question", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private QuestionLike questionLike;
 
     /**

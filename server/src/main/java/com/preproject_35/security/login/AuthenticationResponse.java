@@ -1,5 +1,6 @@
 package com.preproject_35.security.login;
 
+
 public class AuthenticationResponse {
     private boolean success;
     private String message;

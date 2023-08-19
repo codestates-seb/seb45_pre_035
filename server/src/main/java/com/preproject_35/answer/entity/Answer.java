@@ -37,7 +37,7 @@ public class Answer {
 */
 
     // 추가자 : 박성원
-    @OneToOne(mappedBy = "answer", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "answer", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private AnswerLike answerLike;
 
     public void setAnswerLike(AnswerLike answerLike) {

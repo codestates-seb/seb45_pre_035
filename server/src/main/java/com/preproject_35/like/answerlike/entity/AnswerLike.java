@@ -24,7 +24,7 @@ public class AnswerLike {
     @ElementCollection
     private Map<Long, LikeStatus> likeStatus = new HashMap<>();
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ANSWER_ID")
     private Answer answer;
 
@@ -32,8 +32,7 @@ public class AnswerLike {
 
     // 투표 상태를 enum 타입으로 나타냄.
     public enum LikeStatus {
-        VOTE_GOOD(1, "추천"),
-        VOTE_BAD(-1, "비추천");
+        VOTE_GOOD(1, "좋아요");
 
         @Getter
         private int likeNumber;

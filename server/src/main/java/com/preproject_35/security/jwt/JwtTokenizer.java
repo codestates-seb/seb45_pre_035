@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
+import java.sql.SQLOutput;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
@@ -61,6 +62,8 @@ public class JwtTokenizer {
                 .signWith(key) // 시크릿 키 서명
                 .compact(); // JWT토큰 문자열 반환
     }
+
+
 
     // 리프레시 토큰을 생성
     public String generateRefreshToken(String subject, Date expiration, String base64EncodedSecretKey) {

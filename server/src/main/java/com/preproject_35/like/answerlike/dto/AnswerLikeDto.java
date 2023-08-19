@@ -12,8 +12,6 @@ public class AnswerLikeDto {
     @AllArgsConstructor
     public static class Post {
 
-
-
     }
 
     @Getter
@@ -21,6 +19,7 @@ public class AnswerLikeDto {
     @AllArgsConstructor
     public static class Patch {
 
+        //좋아요 안좋아요
 
     }
 
@@ -28,6 +27,7 @@ public class AnswerLikeDto {
     @Setter
     @AllArgsConstructor
     public static class Response{
+        private Long memberId;
         private Long likeId;
         private Map<Long, AnswerLike.LikeStatus> likeStatus;
         private int likeCount;

@@ -31,15 +31,14 @@ public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private JwtAuthenticationSuccessHandler jwtAuthenticationSuccessHandler;
 
     @Autowired
-    private JwtTokenizer jwtTokenizer;
+    private JwtTokenizer jwtTokenizer; // 생성 관련
 
     @Autowired
-    private JwtProperties jwtProperties;
+    private JwtProperties jwtProperties; // 설정 정보
 
+    // 로그인 정보가 유효한 경우에는 JWT 토큰을 생성하여 응답에 포함시킵니다. 그렇지 않은 경우에는 에러 메시지를 반환합니다.
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> login(@RequestBody AuthenticationRequest authenticationRequest, HttpServletRequest request, HttpServletResponse response) {
         try {
