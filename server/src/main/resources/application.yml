@@ -9,5 +9,6 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
-  jwt:
-    expiration: 86400
+  mail:
+    address:
+      admin: rjf654@gmail.com
