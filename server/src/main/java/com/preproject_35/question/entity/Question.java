@@ -1,6 +1,7 @@
 package com.preproject_35.question.entity;
 
 import com.preproject_35.answer.entity.Answer;
+import com.preproject_35.like.questionlike.entity.QuestionLike;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,8 +35,20 @@ public class Question {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Answer> answers = new ArrayList<>();
 
+    // 추가자 : 박성원
+    @OneToOne(mappedBy = "question", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private QuestionLike questionLike;
+
     /**
      * cascade = CascadeType.ALL : 부모와 자식 엔티티를 한 번에 영속화 + 한번에 제거
      * fetch = FetchType.EAGER : 즉시로딩 , fetch = fetchType.LAZY : 지연로딩
      */
+
+    // 추가자 : 박성원 -> 좋아요 클래스 구현 위함
+    public void setQuestionLike(QuestionLike questionLike) {
+        this.questionLike = questionLike;
+        if (questionLike.getQuestion() != this) {
+            questionLike.setQuestion(this);
+        }
+    }
 }

@@ -40,11 +40,11 @@ public class JwtTokenizer {
     }
 
     /** 액세스 토큰을 생성
-    * @claims: 토큰에 추가할 클레임(정보)을 포함한 맵
-    * @subject: 토큰의 주제로 일반적으로 사용자 아이디나 이메일 주소
-    * @expiration: 토큰의 만료 시간
-    * @base64EncodedSecretKey: Base64로 인코딩된 시크릿 키 문자열
-    */
+     * @claims: 토큰에 추가할 클레임(정보)을 포함한 맵
+     * @subject: 토큰의 주제로 일반적으로 사용자 아이디나 이메일 주소
+     * @expiration: 토큰의 만료 시간
+     * @base64EncodedSecretKey: Base64로 인코딩된 시크릿 키 문자열
+     */
     public String generateAccessToken(Map<String, Object> claims,
                                       String subject,
                                       Date expiration,

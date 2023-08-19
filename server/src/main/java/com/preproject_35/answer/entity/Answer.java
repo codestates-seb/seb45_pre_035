@@ -1,5 +1,8 @@
 package com.preproject_35.answer.entity;
 
+import com.preproject_35.like.answerlike.entity.AnswerLike;
+import com.preproject_35.like.questionlike.entity.QuestionLike;
+import com.preproject_35.question.entity.Question;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,5 +36,15 @@ public class Answer {
 
 */
 
+    // 추가자 : 박성원
+    @OneToOne(mappedBy = "answer", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private AnswerLike answerLike;
+
+    public void setAnswerLike(AnswerLike answerLike) {
+        this.answerLike = answerLike;
+        if (answerLike.getAnswer() != this) {
+            answerLike.setAnswer(this);
+        }
+    }
 }
 
