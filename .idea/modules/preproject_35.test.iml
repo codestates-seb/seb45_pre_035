@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="preproject_35:test" external.linked.project.path="$MODULE_DIR$/../../server" external.root.project.path="$MODULE_DIR$/../../server" external.system.id="GRADLE" external.system.module.group="preproject_35" external.system.module.type="sourceSet" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="web" name="Web">
+    <facet external-system-id="GRADLE" type="web" name="Web">
       <configuration>
         <webroots />
       </configuration>
-    </facet>
-    <facet type="jpa" name="JPA">
-      <configuration>
-        <setting name="validation-enabled" value="true" />
-        <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
-        <naming-strategy-map />
-      </configuration>
-    </facet>
-    <facet type="Spring" name="Spring">
-      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager">
     <output-test url="file://$MODULE_DIR$/../../server/build/classes/java/test" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../server/src/test">
-      <sourceFolder url="file://$MODULE_DIR$/../../server/src/test/java" isTestSource="true" />
-    </content>
     <content url="file://$MODULE_DIR$/../../server/src/test">
       <sourceFolder url="file://$MODULE_DIR$/../../server/src/test/java" isTestSource="true" />
     </content>
@@ -36,6 +22,7 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.7.14" level="project" />
     <orderEntry type="library" name="Gradle: org.mapstruct:mapstruct:1.4.2.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.jsonwebtoken:jjwt-api:0.11.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jdbc:2.7.14" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:2.7.14" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-test:5.7.10" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.7.14" level="project" />
@@ -55,6 +42,7 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.7.14" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.3.29" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.3.29" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jdbc:2.4.14" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:2.7.14" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test:2.7.14" level="project" />
     <orderEntry type="library" name="Gradle: com.jayway.jsonpath:json-path:2.7.0" level="project" />
@@ -98,6 +86,7 @@
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.13.5" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.78" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.78" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-relational:2.4.14" level="project" />
     <orderEntry type="library" name="Gradle: net.minidev:json-smart:2.4.11" level="project" />
     <orderEntry type="library" name="Gradle: jakarta.activation:jakarta.activation-api:1.2.2" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-params:5.8.2" level="project" />
@@ -122,7 +111,7 @@
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm:9.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.jsonwebtoken:jjwt-impl:0.11.5" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.jsonwebtoken:jjwt-jackson:0.11.5" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.mysql:mysql-connector-j:8.0.33" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.h2database:h2:2.1.214" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.objenesis:objenesis:3.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: com.sun.activation:jakarta.activation:1.2.2" level="project" />
