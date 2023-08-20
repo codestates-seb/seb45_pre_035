@@ -12,3 +12,7 @@ spring:
   mail:
     address:
       admin: rjf654@gmail.com
+  jwt:
+    key: ${JWT_SECRET_KEY} #1234567890abcdefghijklmnopqrstuvwxyz (성원맥북Key)
+    access-token-expiration-minutes: 30
+    refresh-token-expiration-minutes: 420
