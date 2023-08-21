@@ -17,6 +17,15 @@ spring:
       hibernate.format_sql: true
       dialect: org.hibernate.dialect.MySQL8InnoDBDialect
 
+mail:
+  address:
+    admin: rjf654@gmail.com
+
+jwt:
+  key: ${JWT_SECRET_KEY}
+  access-token-expiration-minutes: 30
+  refresh-token-expiration-minutes: 420
+
 logging:
   level:
     org.hibernate.SQL: debug
