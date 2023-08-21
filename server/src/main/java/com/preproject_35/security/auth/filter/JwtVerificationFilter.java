@@ -2,6 +2,8 @@ package com.preproject_35.security.auth.filter;
 
 import com.preproject_35.security.auth.jwt.JwtTokenizer;
 import com.preproject_35.security.utils.CustomAuthorityUtils;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.security.SignatureException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -29,10 +31,17 @@ public class JwtVerificationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        Map<String, Object> claims = verifyJws(request); //  JWT를 검증하는 데 사용되는 private 메서드
-        setAuthenticationToContext(claims);      // Authentication 객체를 SecurityContext에 저장하기 위한 메서드
+        try {
+            Map<String, Object> claims = verifyJws(request);
+            setAuthenticationToContext(claims);
+        } catch (SignatureException se) {
+            request.setAttribute("exception", se);
+        } catch (ExpiredJwtException ee) {
+            request.setAttribute("exception", ee);
+        } catch (Exception e) {
+            request.setAttribute("exception", e);
+        }
 
-        // 문제없이 JWT의 서명 검증에 성공하고, Security Context에 Authentication을 저장한 뒤 (Next) Security Filter를 호출
         filterChain.doFilter(request, response);
     }
 

@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_4_5_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_objenesis_objenesis_3_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/preproject_35.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> dab50a981ae1861a798bef0a3f1ab86b8d1b8eb5
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +38,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="preproject_35" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="preproject_35" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -67,36 +67,36 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "seongwon",
-    "last_opened_file_path": "C:/Users/CHANGHOME/Downloads/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "service.view.auto.scroll.to.source": "true",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "bf14a6a41cf7e49330a01d15f83b2c18",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;seongwon&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/park-seongwon/Coding/seb45_pre_035&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;bf14a6a41cf7e49330a01d15f83b2c18&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -105,6 +105,30 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.Preproject35Application">
+    <configuration name="AccessTokenGeneratorTest.testGenerateAccessToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.preproject_35.AccessTokenGeneratorTest.testGenerateAccessToken&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <configuration name="JwtTokenizerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -129,7 +153,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="JwtTokenizerTest2.testSecretKey" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JwtTokenizerTest.testDecodeToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
@@ -142,7 +166,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.preproject_35.JwtTokenizerTest2.testSecretKey&quot;" />
+            <option value="&quot;com.preproject_35.JwtTokenizerTest.testDecodeToken&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -153,7 +177,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="JwtTokenizerTest.testGenerateAccessToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JwtTokenizerTest.verifyExpirationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
@@ -166,7 +190,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.preproject_35.JwtTokenizerTest.testGenerateAccessToken&quot;" />
+            <option value="&quot;com.preproject_35.JwtTokenizerTest.verifyExpirationTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -177,29 +201,55 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Preproject35Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="zulu-11" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <configuration name="JwtTokenizerTest.verifySignatureTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.preproject_35.JwtTokenizerTest.verifySignatureTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="Preproject35Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <envs>
+        <env name="JWT_SECRET_KEY" value="1234567890abcdefghijklmnopqrstuvwxyz" />
+      </envs>
       <module name="preproject_35.main" />
-      <selectedOptions>
-        <option name="environmentVariables" />
-      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.preproject_35.Preproject35Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.JwtTokenizerTest2.testSecretKey" />
+      <item itemvalue="Gradle.AccessTokenGeneratorTest.testGenerateAccessToken" />
       <item itemvalue="Gradle.JwtTokenizerTest" />
-      <item itemvalue="Gradle.JwtTokenizerTest.testGenerateAccessToken" />
+      <item itemvalue="Gradle.JwtTokenizerTest.testDecodeToken" />
+      <item itemvalue="Gradle.JwtTokenizerTest.verifyExpirationTest" />
+      <item itemvalue="Gradle.JwtTokenizerTest.verifySignatureTest" />
       <item itemvalue="Spring Boot.Preproject35Application" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.JwtTokenizerTest2.testSecretKey" />
+        <item itemvalue="Gradle.JwtTokenizerTest.verifyExpirationTest" />
         <item itemvalue="Gradle.JwtTokenizerTest" />
-        <item itemvalue="Gradle.JwtTokenizerTest.testGenerateAccessToken" />
+        <item itemvalue="Gradle.JwtTokenizerTest.verifySignatureTest" />
+        <item itemvalue="Gradle.AccessTokenGeneratorTest.testGenerateAccessToken" />
+        <item itemvalue="Gradle.JwtTokenizerTest.testDecodeToken" />
       </list>
     </recent_temporary>
   </component>
@@ -214,6 +264,7 @@
       <workItem from="1691741786779" duration="1451000" />
       <workItem from="1692153310090" duration="8434000" />
       <workItem from="1692231535322" duration="46254000" />
+<<<<<<< HEAD
       <workItem from="1692368146175" duration="7885000" />
       <workItem from="1692557248782" duration="1506000" />
       <workItem from="1692577685839" duration="4512000" />
@@ -221,6 +272,15 @@
       <workItem from="1692587863913" duration="2007000" />
       <workItem from="1692591736585" duration="13936000" />
       <workItem from="1692627573442" duration="8114000" />
+=======
+      <workItem from="1692368146175" duration="7531000" />
+      <workItem from="1692377111566" duration="12965000" />
+      <workItem from="1692419125075" duration="21371000" />
+      <workItem from="1692543168992" duration="5568000" />
+      <workItem from="1692615761504" duration="5117000" />
+      <workItem from="1692621464505" duration="645000" />
+      <workItem from="1692622123469" duration="689000" />
+>>>>>>> dab50a981ae1861a798bef0a3f1ab86b8d1b8eb5
     </task>
     <servers />
   </component>
