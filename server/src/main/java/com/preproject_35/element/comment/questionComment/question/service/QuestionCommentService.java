@@ -1,9 +1,9 @@
 package com.preproject_35.element.comment.questionComment.question.service;
 
-import com.preproject_35.comment.question.entity.QuestionComment;
-import com.preproject_35.comment.question.repository.QuestioncommentRepository;
-import com.preproject_35.error.BusinessLogicException;
-import com.preproject_35.error.ExceptionCode;
+import com.preproject_35.element.comment.questionComment.question.entity.QuestionComment;
+import com.preproject_35.element.comment.questionComment.question.repository.QuestioncommentRepository;
+import com.preproject_35.element.error.ExceptionCode;
+import com.preproject_35.element.member.BusinessLogicException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

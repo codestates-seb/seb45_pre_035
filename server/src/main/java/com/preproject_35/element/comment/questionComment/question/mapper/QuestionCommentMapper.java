@@ -1,9 +1,10 @@
 package com.preproject_35.element.comment.questionComment.question.mapper;
 
-import com.preproject_35.comment.question.dto.QuestionCommentPatchDto;
-import com.preproject_35.comment.question.dto.QuestionCommentPostDto;
-import com.preproject_35.comment.question.dto.QuestionCommentResponseDto;
-import com.preproject_35.comment.question.entity.QuestionComment;
+
+import com.preproject_35.element.comment.questionComment.question.dto.QuestionCommentPatchDto;
+import com.preproject_35.element.comment.questionComment.question.dto.QuestionCommentPostDto;
+import com.preproject_35.element.comment.questionComment.question.dto.QuestionCommentResponseDto;
+import com.preproject_35.element.comment.questionComment.question.entity.QuestionComment;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

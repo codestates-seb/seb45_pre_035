@@ -1,11 +1,11 @@
-package com.preproject_35.answerComment.mapper;
+package com.preproject_35.element.comment.answerComment.mapper;
 
-import com.preproject_35.answer.entity.Answer;
 import com.preproject_35.answerComment.dto.AnswerCommentPatchDto;
 import com.preproject_35.answerComment.dto.AnswerCommentPostDto;
 import com.preproject_35.answerComment.dto.AnswerCommentResponseDto;
-import com.preproject_35.answerComment.entitiy.AnswerComment;
-import com.preproject_35.member.entity.Member;
+import com.preproject_35.element.answer.entity.Answer;
+import com.preproject_35.element.comment.answerComment.entitiy.AnswerComment;
+import com.preproject_35.element.member.Member;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 

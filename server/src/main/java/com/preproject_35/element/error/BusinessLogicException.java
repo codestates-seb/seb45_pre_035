@@ -1,12 +1,12 @@
-package com.preproject_35.element.member;
+package com.preproject_35.element.error;
 
 import lombok.Getter;
 
 public class BusinessLogicException extends RuntimeException{
     @Getter
-    private ExceptionCodeMember exceptionCode;
+    private ExceptionCode exceptionCode;
 
-    public BusinessLogicException(ExceptionCodeMember exceptionCode) {
+    public BusinessLogicException(ExceptionCode exceptionCode) {
         super(exceptionCode.getMessage());
         this.exceptionCode = exceptionCode;
     }

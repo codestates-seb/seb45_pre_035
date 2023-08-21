@@ -1,11 +1,11 @@
 package com.preproject_35.element.comment.questionComment.question.controller;
 
-import com.preproject_35.comment.question.dto.QuestionCommentResponseDto;
-import com.preproject_35.comment.question.entity.QuestionComment;
-import com.preproject_35.comment.question.dto.QuestionCommentPatchDto;
-import com.preproject_35.comment.question.dto.QuestionCommentPostDto;
-import com.preproject_35.comment.question.mapper.QuestionCommentMapper;
-import com.preproject_35.comment.question.service.QuestionCommentService;
+import com.preproject_35.element.comment.questionComment.question.dto.QuestionCommentPatchDto;
+import com.preproject_35.element.comment.questionComment.question.dto.QuestionCommentPostDto;
+import com.preproject_35.element.comment.questionComment.question.dto.QuestionCommentResponseDto;
+import com.preproject_35.element.comment.questionComment.question.entity.QuestionComment;
+import com.preproject_35.element.comment.questionComment.question.mapper.QuestionCommentMapper;
+import com.preproject_35.element.comment.questionComment.question.service.QuestionCommentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

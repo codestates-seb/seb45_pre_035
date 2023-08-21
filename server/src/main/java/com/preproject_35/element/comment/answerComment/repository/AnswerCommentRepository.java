@@ -1,7 +1,7 @@
 package com.preproject_35.answerComment.repository;
 
-import com.preproject_35.answer.entity.Answer;
-import com.preproject_35.answerComment.entitiy.AnswerComment;
+import com.preproject_35.element.answer.entity.Answer;
+import com.preproject_35.element.comment.answerComment.entitiy.AnswerComment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

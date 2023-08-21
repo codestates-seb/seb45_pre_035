@@ -1,14 +1,15 @@
-package com.preproject_35.answer.service;
+package com.preproject_35.element.answer.service;
 
-import com.preproject_35.answer.entity.Answer;
-import com.preproject_35.answer.repository.AnswerRepository;
-import com.preproject_35.question.entity.Question;
-import com.preproject_35.question.repository.QuestionRepository;
+import com.preproject_35.element.answer.entity.Answer;
+import com.preproject_35.element.answer.repository.AnswerRepository;
+import com.preproject_35.element.question.entity.Question;
+import com.preproject_35.element.question.repository.QuestionRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 
 @AllArgsConstructor
 @Service

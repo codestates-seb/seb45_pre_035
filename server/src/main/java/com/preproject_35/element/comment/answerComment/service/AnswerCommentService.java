@@ -1,9 +1,9 @@
 package com.preproject_35.answerComment.service;
 
-import com.preproject_35.answer.entity.Answer;
-import com.preproject_35.answer.repository.AnswerRepository;
-import com.preproject_35.answerComment.entitiy.AnswerComment;
 import com.preproject_35.answerComment.repository.AnswerCommentRepository;
+import com.preproject_35.element.answer.entity.Answer;
+import com.preproject_35.element.answer.repository.AnswerRepository;
+import com.preproject_35.element.comment.answerComment.entitiy.AnswerComment;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

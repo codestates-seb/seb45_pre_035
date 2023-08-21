@@ -1,7 +1,7 @@
-package com.preproject_35.answer.repository;
+package com.preproject_35.element.answer.repository;
 
-import com.preproject_35.answer.entity.Answer;
-import com.preproject_35.question.entity.Question;
+import com.preproject_35.element.answer.entity.Answer;
+import com.preproject_35.element.question.entity.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

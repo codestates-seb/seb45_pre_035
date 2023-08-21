@@ -1,8 +1,7 @@
-package com.preproject_35.answerComment.entitiy;
+package com.preproject_35.element.comment.answerComment.entitiy;
 
-import com.preproject_35.answer.entity.Answer;
-import com.preproject_35.member.entity.Member;
-import com.preproject_35.question.entity.Question;
+import com.preproject_35.element.answer.entity.Answer;
+import com.preproject_35.element.member.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

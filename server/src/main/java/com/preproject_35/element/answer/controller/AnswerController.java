@@ -1,15 +1,15 @@
-package com.preproject_35.answer.controller;
+package com.preproject_35.element.answer.controller;
 
-import com.preproject_35.answer.dto.AnswerPatchDto;
-import com.preproject_35.answer.dto.AnswerPostDto;
-import com.preproject_35.answer.dto.AnswerResponseDto;
-import com.preproject_35.answer.entity.Answer;
-import com.preproject_35.answer.mapper.AnswerMapper;
-import com.preproject_35.answer.service.AnswerService;
-import com.preproject_35.member.entity.Member;
-import com.preproject_35.member.repository.MemberRepository;
-import com.preproject_35.question.entity.Question;
-import com.preproject_35.question.repository.QuestionRepository;
+import com.preproject_35.element.answer.dto.AnswerPatchDto;
+import com.preproject_35.element.answer.dto.AnswerPostDto;
+import com.preproject_35.element.answer.dto.AnswerResponseDto;
+import com.preproject_35.element.answer.entity.Answer;
+import com.preproject_35.element.answer.mapper.AnswerMapper;
+import com.preproject_35.element.answer.service.AnswerService;
+import com.preproject_35.element.member.Member;
+import com.preproject_35.element.member.Repository.MemberRepository;
+import com.preproject_35.element.question.entity.Question;
+import com.preproject_35.element.question.repository.QuestionRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.crossstore.ChangeSetPersister;

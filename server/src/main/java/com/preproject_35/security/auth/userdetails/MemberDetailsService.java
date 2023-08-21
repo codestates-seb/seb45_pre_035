@@ -1,7 +1,7 @@
 package com.preproject_35.security.auth.userdetails;
 
 import com.preproject_35.element.member.BusinessLogicException;
-import com.preproject_35.element.member.ExceptionCode;
+import com.preproject_35.element.member.ExceptionCodeMember;
 import com.preproject_35.element.member.Member;
 import com.preproject_35.element.member.Repository.MemberRepository;
 import com.preproject_35.security.utils.CustomAuthorityUtils;
@@ -27,7 +27,7 @@ public class MemberDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<Member> optionalMember = memberRepository.findByEmail(username);
-        Member findMember = optionalMember.orElseThrow(() -> new BusinessLogicException(ExceptionCode.MEMBER_NOT_FOUND));
+        Member findMember = optionalMember.orElseThrow(() -> new BusinessLogicException(ExceptionCodeMember.MEMBER_NOT_FOUND));
 
         return new MemberDetails(findMember);
     }

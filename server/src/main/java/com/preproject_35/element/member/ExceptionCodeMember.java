@@ -2,7 +2,7 @@ package com.preproject_35.element.member;
 
 import lombok.Getter;
 
-public enum ExceptionCode {
+public enum ExceptionCodeMember {
     MEMBER_NOT_FOUND(404, "Member Not Found"),
     MEMBER_EXISTS(200,"OK");
 
@@ -12,7 +12,7 @@ public enum ExceptionCode {
     @Getter
     private String message;
 
-    ExceptionCode(int status, String message) {
+    ExceptionCodeMember(int status, String message) {
         this.status = status;
         this.message = message;
     }

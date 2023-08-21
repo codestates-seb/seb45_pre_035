@@ -1,13 +1,13 @@
-package com.preproject_35.answer.entity;
+package com.preproject_35.element.answer.entity;
 
 import com.preproject_35.answerComment.entitiy.AnswerComment;
-import com.preproject_35.member.entity.Member;
-import com.preproject_35.question.entity.Question;
+
+import com.preproject_35.element.member.Member;
+import com.preproject_35.element.question.entity.Question;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 

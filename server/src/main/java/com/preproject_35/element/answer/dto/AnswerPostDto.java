@@ -1,4 +1,4 @@
-package com.preproject_35.answer.dto;
+package com.preproject_35.element.answer.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
