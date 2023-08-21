@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { PageStyle } from './styles/PageStyle';
 import { api } from '../Api/api';
 // eslint-disable-next-line import/named
@@ -6,8 +7,10 @@ import PagiNation from '../Components/PagiNation';
 import React, { useEffect, useState } from 'react';
 import { HomeBox } from './styles/HomeBox';
 
-export default function Home() {
-  const [questions, setQuestions] = useState([]);
+export default function Home(props) {
+  const [questions, setQuestions] = useState(
+    props.questions ? props.questions : [],
+  );
   const [count, setCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1); // 현재페이지
   const [questionsPerPage] = useState(6);
@@ -47,12 +50,12 @@ export default function Home() {
         {currentQuestions.map((question) => (
           <QuestionListItem key={question.questionId} question={question} />
         ))}
+        <PagiNation
+          page={currentPage}
+          count={count}
+          onPageChange={handlePageChange}
+        />
       </HomeBox>
-      <PagiNation
-        page={currentPage}
-        count={count}
-        onPageChange={handlePageChange}
-      />
     </PageStyle>
   );
 }

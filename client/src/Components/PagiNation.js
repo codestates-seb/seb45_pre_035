@@ -1,10 +1,10 @@
 import React from 'react';
 import Pagination from 'react-js-pagination';
-// eslint-disable-next-line import/no-named-as-default
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 const PaginationContainer = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 64px;
@@ -27,6 +27,10 @@ const PaginationContainer = styled.div`
 
   .pagination .active {
     font-weight: bold;
+  }
+
+  .pagination {
+    display: flex;
   }
 `;
 
