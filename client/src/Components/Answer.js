@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { Button } from '../Components/Button';
 import { QuestionDetailContainer } from '../Pages/styles/QuestionDetailContainer';
+import { SmallButton } from './SmallButton';
+import { api } from '../Api/api';
 
 const Answer = (props) => {
   const [answers, setAnswers] = useState(props.answers ? props.answers : []);
@@ -13,7 +15,7 @@ const Answer = (props) => {
     setEditedContent(currentContent);
   };
 
-  const handleSaveEdit = () => {
+  const handleSaveEdit = async () => {
     if (editedContent.trim() !== '') {
       const updatedAnswers = answers.map((answer) =>
         answer.id === editingId
@@ -23,12 +25,39 @@ const Answer = (props) => {
       setAnswers(updatedAnswers);
       setEditingId(null);
       setEditedContent('');
+      try {
+        const response = await api(
+          `/questions/${props.questionId}/answers/${answers.answerId}`,
+          'patch',
+          { editedContent },
+        );
+        if (response.success) {
+          console.log(response);
+        } else {
+          // Handle error
+        }
+      } catch (error) {
+        // Handle error
+      }
     }
   };
 
-  const handleDelete = (answerId) => {
+  const handleDelete = async (answerId) => {
     const updatedAnswers = answers.filter((answer) => answer.id !== answerId);
     setAnswers(updatedAnswers);
+    try {
+      const response = await api(
+        `questions/${props.questionId}/answers/${answerId}`,
+        'delete',
+      );
+      if (response.success) {
+        console.log(response);
+      } else {
+        // Handle error
+      }
+    } catch (error) {
+      // Handle error
+    }
   };
 
   return (
@@ -42,12 +71,15 @@ const Answer = (props) => {
             <div className="author-right-container">
               <div className="my-text">
                 <div
-                  onClick={() => handleEdit(answer.id, answer.content)}
+                  onClick={() => handleEdit(answer.answerId, answer.content)}
                   aria-hidden="true"
                 >
                   <img src="/images/mdi-pen.png" alt=""></img>
                 </div>
-                <div onClick={() => handleDelete(answer.id)} aria-hidden="true">
+                <div
+                  onClick={() => handleDelete(answer.answerId)}
+                  aria-hidden="true"
+                >
                   <img src="/images/mdi-trash.png" alt=""></img>
                 </div>
               </div>
@@ -58,13 +90,12 @@ const Answer = (props) => {
             <div>
               {/* 편집 중인 답변의 내용을 입력하는 텍스트 에어리어 */}
               <textarea
+                className="editarea"
                 value={editedContent}
                 onChange={(e) => setEditedContent(e.target.value)}
               />
               {/* 수정된 답변을 저장하는 버튼 */}
-              <Button primary onClick={handleSaveEdit}>
-                Save
-              </Button>
+              <SmallButton onClick={handleSaveEdit}>Save</SmallButton>
             </div>
           ) : (
             <div>

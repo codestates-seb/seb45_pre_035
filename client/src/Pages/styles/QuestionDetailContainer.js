@@ -137,4 +137,16 @@ export const QuestionDetailContainer = styled.div`
     gap: 10px;
     align-self: stretch;
   }
+  .editarea {
+    display: flex;
+    height: 372px;
+    width: 832px;
+    padding: 30px;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 18px;
+    border: 2px solid #d9d9d9;
+    background: #f5f5f5;
+  }
 `;
