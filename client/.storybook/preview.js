@@ -25,6 +25,5 @@ export const decorators = [
         <Story />
       </BrowserRouter>
     </Provider>
-
   ),
 ];

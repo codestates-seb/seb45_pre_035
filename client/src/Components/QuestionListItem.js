@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {
-  Question,
+  QuestionContainer,
   ContentCard,
   BottomContainer,
+  ContainerTitle,
 } from './QuestionListItem.Styled';
 import { useNavigate } from 'react-router-dom';
-// import { AnswerIcon, LikeIcon } from './IconBtn';
 
 const QuestionItem = ({ question }) => {
   const navigate = useNavigate();
@@ -16,27 +18,28 @@ const QuestionItem = ({ question }) => {
   };
   const parsedDate = new Date(question.createdAt).toLocaleDateString('ko-kr');
 
-  // const question = {
-  //   questionId,
-  //   title,
-  //   content,
-  //   createAt,
-  //   author,
-  //   answers: [].length,
-  //   likes: [].length,
-  // };
-
   return (
-    <Question onClick={questiondetail}>
-      <ContentCard className="question" id={question.questionId}>
-        <h2 className="title">{question.title}</h2>
+    <QuestionContainer>
+      <ContainerTitle>{question.title}</ContainerTitle>
+      <ContentCard onClick={questiondetail} key={question.questionId}>
         <div className="question-message">{question.content}</div>
         <BottomContainer>
-          {/* <IconBtn>
-            <button src={AnswerIcon} onClick={question.answers} />
+          <div className="icon-count">
+            <div>
+              <div>
+                <img src="/images/message.png" alt="" />
+              </div>
+              <span>{question.comments.length}</span>
+            </div>
 
-            <button src={LikeIcon} onClick={question.likes} />
-          </IconBtn> */}
+            <div>
+              <div>
+                <img src="/images/like.png" alt="" />
+              </div>
+              <span>{question.likes_count}</span>
+            </div>
+          </div>
+
           <div className="wrapper">
             <span className="question-author">{question.author}</span>
 
@@ -44,7 +47,7 @@ const QuestionItem = ({ question }) => {
           </div>
         </BottomContainer>
       </ContentCard>
-    </Question>
+    </QuestionContainer>
   );
 };
 export default QuestionItem;
