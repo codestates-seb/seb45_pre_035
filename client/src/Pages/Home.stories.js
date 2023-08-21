@@ -20,7 +20,7 @@ export const Primary = {
     questions: [
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목1',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -91,7 +91,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목1',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -162,7 +162,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목1',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -233,7 +233,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목1',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -304,7 +304,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목1',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -375,7 +375,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목1',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -446,7 +446,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목2',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -517,7 +517,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목2',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -588,7 +588,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목2',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -659,7 +659,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목2',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -730,7 +730,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목2',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -801,7 +801,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목2',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -872,7 +872,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목3',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -943,7 +943,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목3',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1014,7 +1014,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목3',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1085,7 +1085,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목3',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1156,7 +1156,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목3',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1227,7 +1227,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목3',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1298,7 +1298,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목4',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1369,7 +1369,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목4',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1440,7 +1440,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목4',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1511,7 +1511,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목4',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1582,7 +1582,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목4',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',
@@ -1653,7 +1653,7 @@ export const Primary = {
       },
       {
         questionId: 1,
-        title: '질문 제목',
+        title: '질문 제목4',
         content: '내용들내용들내용들',
         createdAt: '2023-08-01T12:34:56Z',
         author: '김코딩',

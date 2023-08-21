@@ -37,7 +37,7 @@ export const ContentCard = styled.div`
     height: 63px;
   }
 `;
-export const ContainerTitle = styled.text`
+export const ContainerTitle = styled.div`
   align-self: stretch;
   color: #3f2305;
   font-family: Inter;

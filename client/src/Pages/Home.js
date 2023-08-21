@@ -3,7 +3,7 @@ import { PageStyle } from './styles/PageStyle';
 import { api } from '../Api/api';
 // eslint-disable-next-line import/named
 import QuestionListItem from '../Components/QuestionListItem';
-import PagiNation from '../Components/PagiNation';
+import ReactPagiNation from 'react-paginate';
 import React, { useEffect, useState } from 'react';
 import { HomeBox, QuestionListContainer } from './styles/HomeBox';
 
@@ -11,23 +11,20 @@ export default function Home(props) {
   const [questions, setQuestions] = useState(
     props.questions ? props.questions : [],
   );
-  const [count, setCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1); // 현재페이지
-  const [questionsPerPage] = useState(6);
+  const questionsPerPage = 6;
   const [currentQuestions, setCurrentQuestions] = useState([]); // 질문데이터 배열
-  // const [startIndex, setStartIndex] = useState(0);
-  // const [endIndex, setEndIndex] = useState(questionsPerPage);
+  const pageCount = Math.ceil(questions.length / questionsPerPage);
 
-  const handlePageChange = ({ selected }) => {
-    setCurrentPage(selected + 1);
+  const handlePageChange = (event) => {
+    setCurrentPage(event.selected + 1);
   };
 
   const fetchQuestions = async () => {
     try {
-      const response = await api.get('/questions');
+      const response = await api('/questions');
 
       setQuestions(response.data);
-      setCount(response.data.length);
     } catch (error) {
       console.error('Error fetching questions:', error);
     }
@@ -40,9 +37,10 @@ export default function Home(props) {
   useEffect(() => {
     const newStartIndex = (currentPage - 1) * questionsPerPage;
     const newEndIndex = newStartIndex + questionsPerPage;
+    console.log(newStartIndex, newEndIndex);
 
     setCurrentQuestions(questions.slice(newStartIndex, newEndIndex));
-  }, [currentPage, questions, questionsPerPage]);
+  }, [currentPage, questions]);
 
   return (
     <PageStyle>
@@ -52,10 +50,19 @@ export default function Home(props) {
             <QuestionListItem key={question.questionId} question={question} />
           ))}
         </QuestionListContainer>
-        <PagiNation
-          page={currentPage}
-          count={count}
+        <ReactPagiNation
+          containerClassName={'pagination'}
+          activeLinkClassName={'active'}
+          pageLinkClassName={'page_num'}
+          previousLinkClassName={'page_num'}
+          nextLinkClassName={'page_num'}
           onPageChange={handlePageChange}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          breakLabel="..."
+          renderOnZeroPageCount={null}
+          nextLabel=">"
+          previousLabel="<"
         />
       </HomeBox>
     </PageStyle>
