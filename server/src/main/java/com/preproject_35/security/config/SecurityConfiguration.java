@@ -1,14 +1,17 @@
 package com.preproject_35.security.config;
 
 import com.preproject_35.security.auth.filter.JwtAuthenticationFilter;
+import com.preproject_35.security.auth.filter.JwtVerificationFilter;
 import com.preproject_35.security.auth.handler.MemberAuthenticationFailureHandler;
 import com.preproject_35.security.auth.handler.MemberAuthenticationSuccessHandler;
 import com.preproject_35.security.auth.jwt.JwtTokenizer;
+import com.preproject_35.security.utils.CustomAuthorityUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -23,6 +26,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 public class SecurityConfiguration {
     private final JwtTokenizer jwtTokenizer;
+    private final CustomAuthorityUtils authorityUtils;
 
     public SecurityConfiguration(JwtTokenizer jwtTokenizer) {
         this.jwtTokenizer = jwtTokenizer;
@@ -34,6 +38,8 @@ public class SecurityConfiguration {
                 .and()
                 .csrf().disable()
                 .cors(withDefaults())
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
                 .formLogin().disable()
                 .httpBasic().disable()
                 .apply(new CustomFilterConfigurer())
@@ -73,7 +79,13 @@ public class SecurityConfiguration {
             jwtAuthenticationFilter.setFilterProcessesUrl("/login");
             jwtAuthenticationFilter.setAuthenticationSuccessHandler(new MemberAuthenticationSuccessHandler());
             jwtAuthenticationFilter.setAuthenticationFailureHandler(new MemberAuthenticationFailureHandler());
-            builder.addFilter(jwtAuthenticationFilter);  //  Spring Security Filter Chain에 추가
+
+            JwtVerificationFilter jwtVerificationFilter = new JwtVerificationFilter(jwtTokenizer, authorityUtils);
+            // JwtVerificationFilter는 JwtAuthenticationFilter에서 로그인 인증에 성공한 후 발급받은 JWT가
+            // 클라이언트의 request header(Authorization 헤더)에 포함되어 있을 경우에만 동작
+            builder
+                    .addFilter(jwtAuthenticationFilter)
+                    .addFilterAfter(jwtVerificationFilter, JwtAuthenticationFilter.class);
         }
     }
 }
