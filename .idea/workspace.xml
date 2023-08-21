@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.main.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/Preproject35Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/Preproject35Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/controller/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/controller/AnswerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/entity/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/entity/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/mapper/AnswerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/mapper/AnswerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/dto/MemberPostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/dto/MemberPostDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/com/preproject_35/AnswerControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/controller/AnswerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerPatchDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerPostDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/entity/Answer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/mapper/AnswerMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/repository/AnswerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/service/AnswerService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +97,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/src/main/java/com/preproject_35" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Preproject35Application">
     <configuration name="Preproject35Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.preproject_35.Preproject35Application" />
@@ -219,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Preproject35Application" />
         <item itemvalue="Gradle.QuestionControllerTest.postQuestionTest" />
         <item itemvalue="Gradle.AnswerControllerTest.postAnswerTest" />
         <item itemvalue="Gradle.MemberControllerMockTest.postMemberTest" />
         <item itemvalue="Gradle.MemberControllerMockTest" />
-        <item itemvalue="Application.Preproject35Application" />
       </list>
     </recent_temporary>
   </component>
