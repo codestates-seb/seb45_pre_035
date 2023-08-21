@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/preproject_35.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/preproject_35.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/comment/questionComment/question/controller/QuestionCommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/comment/questionComment/question/dto/QuestionCommentPatchDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/comment/questionComment/question/dto/QuestionCommentPostDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/comment/questionComment/question/dto/QuestionCommentResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/comment/questionComment/question/entity/QuestionComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/comment/questionComment/question/mapper/QuestionCommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/comment/questionComment/question/repository/QuestioncommentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/comment/questionComment/question/service/QuestionCommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/Dto/QuestionDeleteDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/Dto/QuestionPatchDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/Dto/QuestionPostDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/Dto/QuestionResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/controller/QuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/entity/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/mapper/QuestionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/repository/QuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/element/question/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/preproject_35.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -48,6 +64,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -65,36 +82,46 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;clean__back&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CHANGHOME/Downloads/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;bf14a6a41cf7e49330a01d15f83b2c18&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "clean__back",
+    "last_opened_file_path": "C:/Users/CHANGHOME/coding_fun/preproject_back/seb45_pre_035/server/src/main/java/com/preproject_35/element",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "service.view.auto.scroll.to.source": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "bf14a6a41cf7e49330a01d15f83b2c18",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CHANGHOME\coding_fun\preproject_back\seb45_pre_035\server\src\main\java\com\preproject_35\element" />
+      <recent name="C:\Users\CHANGHOME\coding_fun\preproject_back\seb45_pre_035\server\src\main\java\com\preproject_35\element\comment" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CHANGHOME\coding_fun\preproject_back\seb45_pre_035\server\src\main\java\com\preproject_35\element\comment" />
+      <recent name="C:\Users\CHANGHOME\coding_fun\preproject_back\seb45_pre_035\server\src\main\java\com\preproject_35\element" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -102,7 +129,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.JwtTokenizerTest2.testSecretKey">
+  <component name="RunManager" selected="Spring Boot.Preproject35Application">
     <configuration name="JwtTokenizerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -175,19 +202,6 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="preproject_35" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="preproject_35" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Preproject35Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="zulu-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -204,6 +218,7 @@
       <item itemvalue="Gradle.JwtTokenizerTest2.testSecretKey" />
       <item itemvalue="Gradle.JwtTokenizerTest" />
       <item itemvalue="Gradle.JwtTokenizerTest.testGenerateAccessToken" />
+      <item itemvalue="Spring Boot.Preproject35Application" />
     </list>
     <recent_temporary>
       <list>
@@ -230,22 +245,11 @@
       <workItem from="1692583304555" duration="2636000" />
       <workItem from="1692587863913" duration="2007000" />
       <workItem from="1692591736585" duration="13936000" />
-      <workItem from="1692627573442" duration="1935000" />
+      <workItem from="1692627573442" duration="10103000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
