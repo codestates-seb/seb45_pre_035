@@ -1,17 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { BrowserRouter, Router } from 'react-router-dom';
 import QuestionDetail from './QuestionDetail';
-import React from 'react';
-
-// const Template = () => {
-//   return (
-//     <BrowserRouter>
-//       <Router>
-//         <QuestionDetail></QuestionDetail>
-//       </Router>
-//     </BrowserRouter>
-//   );
-// };
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
