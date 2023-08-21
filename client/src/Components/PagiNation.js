@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination from 'react-js-pagination';
+import { Pagination } from 'react-js-pagination';
 import { styled } from 'styled-components';
 
 const PaginationContainer = styled.div`
