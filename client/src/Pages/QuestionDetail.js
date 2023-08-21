@@ -5,6 +5,7 @@ import { PageStyle } from './styles/PageStyle';
 import BeforePage from '../Components/BeforePage';
 import { QuestionDetailContainer } from './styles/QuestionDetailContainer';
 import { Button } from '../Components/Button';
+import Like from '../Components/Like';
 
 export default function QuestionDetail({ question }) {
   // const [question, setQuestion] = useState({});
@@ -38,12 +39,11 @@ export default function QuestionDetail({ question }) {
               </div>
               <div>{question.comments.length}</div>
             </div>
-            <div>
-              <div>
-                <img src="/images/like.png" alt=""></img>
-              </div>
-              <div>{question.likes_count}</div>
-            </div>
+            <Like
+              likes_count={question.likes_count}
+              questionId={question.questionId}
+              user_has_liked={question.user_has_liked}
+            ></Like>
           </div>
         </div>
 
@@ -70,12 +70,13 @@ export default function QuestionDetail({ question }) {
                     </div>
                     <div>{answer.comments.length}</div>
                   </div>
-                  <div>
-                    <div>
-                      <img src="/images/like.png" alt=""></img>
-                    </div>
-                    <div>{answer.likes_count}</div>
-                  </div>
+                  <Like
+                    type="answer" // "question" or "answer"
+                    likes_count={answer.likes_count}
+                    questionId={question.questionId}
+                    answerId={answer.answerId} // or answerId
+                    user_has_liked={answer.user_has_liked}
+                  ></Like>
                 </div>
               </div>
             </div>
