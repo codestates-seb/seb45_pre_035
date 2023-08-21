@@ -54,7 +54,7 @@ export const BottomContainer = styled.div`
   align-items: center;
   width: 356px;
   height: 31px;
-  gap: 95px;
+  justify-content: space-between;
   align-self: stretch;
   .icon-count {
     display: flex;
@@ -88,8 +88,6 @@ export const BottomContainer = styled.div`
     line-height: normal;
   }
   .wrapper {
-    width: 247px;
-    flex-shrink: 0;
     color: #000;
     font-family: Inter;
     font-size: 14px;
