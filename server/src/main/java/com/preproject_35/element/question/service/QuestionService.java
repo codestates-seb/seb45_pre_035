@@ -1,7 +1,7 @@
 package com.preproject_35.element.question.service;
 
+import com.preproject_35.element.error.BusinessLogicException;
 import com.preproject_35.element.error.ExceptionCode;
-import com.preproject_35.element.member.BusinessLogicException;
 import com.preproject_35.element.question.entity.Question;
 import com.preproject_35.element.question.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class QuestionService {
-    private QuestionRepository questionRepository;
+    private final QuestionRepository questionRepository;
 
     public QuestionService(QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;

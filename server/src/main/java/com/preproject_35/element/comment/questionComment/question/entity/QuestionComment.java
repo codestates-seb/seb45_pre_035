@@ -1,7 +1,7 @@
 package com.preproject_35.element.comment.questionComment.question.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.preproject_35.element.member.Member;
+import com.preproject_35.element.member.entity.Member;
 import com.preproject_35.element.question.entity.Question;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

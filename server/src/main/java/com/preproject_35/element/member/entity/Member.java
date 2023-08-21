@@ -1,4 +1,4 @@
-package com.preproject_35.element.member;
+package com.preproject_35.element.member.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +27,7 @@ public class Member {
     }
 
     private String username;
+
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)

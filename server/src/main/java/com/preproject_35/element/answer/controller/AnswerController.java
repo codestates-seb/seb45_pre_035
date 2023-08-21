@@ -6,7 +6,7 @@ import com.preproject_35.element.answer.dto.AnswerResponseDto;
 import com.preproject_35.element.answer.entity.Answer;
 import com.preproject_35.element.answer.mapper.AnswerMapper;
 import com.preproject_35.element.answer.service.AnswerService;
-import com.preproject_35.element.member.Member;
+import com.preproject_35.element.member.entity.Member;
 import com.preproject_35.element.member.Repository.MemberRepository;
 import com.preproject_35.element.question.entity.Question;
 import com.preproject_35.element.question.repository.QuestionRepository;

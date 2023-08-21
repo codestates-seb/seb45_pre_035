@@ -1,7 +1,7 @@
 package com.preproject_35.element.comment.answerComment.entitiy;
 
 import com.preproject_35.element.answer.entity.Answer;
-import com.preproject_35.element.member.Member;
+import com.preproject_35.element.member.entity.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

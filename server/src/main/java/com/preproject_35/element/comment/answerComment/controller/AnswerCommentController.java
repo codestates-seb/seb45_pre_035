@@ -8,7 +8,7 @@ import com.preproject_35.element.answer.entity.Answer;
 import com.preproject_35.element.answer.service.AnswerService;
 import com.preproject_35.element.comment.answerComment.entitiy.AnswerComment;
 import com.preproject_35.element.comment.answerComment.mapper.AnswerCommentMapper;
-import com.preproject_35.element.member.Member;
+import com.preproject_35.element.member.entity.Member;
 import com.preproject_35.element.member.Repository.MemberRepository;
 import com.preproject_35.element.member.Service.MemberService;
 

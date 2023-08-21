@@ -2,8 +2,8 @@ package com.preproject_35.element.comment.questionComment.question.service;
 
 import com.preproject_35.element.comment.questionComment.question.entity.QuestionComment;
 import com.preproject_35.element.comment.questionComment.question.repository.QuestioncommentRepository;
+import com.preproject_35.element.error.BusinessLogicException;
 import com.preproject_35.element.error.ExceptionCode;
-import com.preproject_35.element.member.BusinessLogicException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class QuestionCommentService {
-    private QuestioncommentRepository questioncommentRepository;
+    private final QuestioncommentRepository questioncommentRepository;
 
     public QuestionCommentService(QuestioncommentRepository questioncommentRepository) {
         this.questioncommentRepository = questioncommentRepository;

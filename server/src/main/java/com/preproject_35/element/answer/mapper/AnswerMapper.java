@@ -4,7 +4,7 @@ import com.preproject_35.element.answer.dto.AnswerPatchDto;
 import com.preproject_35.element.answer.dto.AnswerPostDto;
 import com.preproject_35.element.answer.dto.AnswerResponseDto;
 import com.preproject_35.element.answer.entity.Answer;
-import com.preproject_35.element.member.Member;
+import com.preproject_35.element.member.entity.Member;
 import com.preproject_35.element.question.entity.Question;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

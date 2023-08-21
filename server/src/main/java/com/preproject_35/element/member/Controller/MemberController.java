@@ -2,10 +2,9 @@ package com.preproject_35.element.member.Controller;
 
 import com.preproject_35.element.member.Dto.MemberPostDto;
 import com.preproject_35.element.member.Mapper.MemberMapper;
-import com.preproject_35.element.member.Member;
+import com.preproject_35.element.member.entity.Member;
 import com.preproject_35.element.member.Service.MemberService;
 import com.preproject_35.element.member.Dto.MemberResponseDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
