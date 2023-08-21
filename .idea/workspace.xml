@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/handler/MemberAccessDeniedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/handler/MemberAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/utils/ErrorResponder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/filter/JwtVerificationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/filter/JwtVerificationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/userdetails/MemberDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/userdetails/MemberDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/config/SecurityConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +100,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.JwtTokenizerTest.verifyExpirationTest">
+  <component name="RunManager" selected="Spring Boot.Preproject35Application">
     <configuration name="AccessTokenGeneratorTest.testGenerateAccessToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -216,20 +221,21 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Preproject35Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="Preproject35Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="preproject_35.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.preproject_35.Preproject35Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Preproject35Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="preproject_35.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="preproject_35.preproject_35.Preproject35Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Gradle.AccessTokenGeneratorTest.testGenerateAccessToken" />
+      <item itemvalue="Gradle.JwtTokenizerTest" />
+      <item itemvalue="Gradle.JwtTokenizerTest.testDecodeToken" />
+      <item itemvalue="Gradle.JwtTokenizerTest.verifyExpirationTest" />
+      <item itemvalue="Gradle.JwtTokenizerTest.verifySignatureTest" />
+      <item itemvalue="Spring Boot.Preproject35Application" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.JwtTokenizerTest.verifyExpirationTest" />
@@ -255,7 +261,7 @@
       <workItem from="1692377111566" duration="12965000" />
       <workItem from="1692419125075" duration="21371000" />
       <workItem from="1692543168992" duration="5568000" />
-      <workItem from="1692615761504" duration="894000" />
+      <workItem from="1692615761504" duration="5065000" />
     </task>
     <servers />
   </component>

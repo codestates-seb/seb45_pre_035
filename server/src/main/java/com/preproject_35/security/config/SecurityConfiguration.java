@@ -2,12 +2,15 @@ package com.preproject_35.security.config;
 
 import com.preproject_35.security.auth.filter.JwtAuthenticationFilter;
 import com.preproject_35.security.auth.filter.JwtVerificationFilter;
+import com.preproject_35.security.auth.handler.MemberAccessDeniedHandler;
+import com.preproject_35.security.auth.handler.MemberAuthenticationEntryPoint;
 import com.preproject_35.security.auth.handler.MemberAuthenticationFailureHandler;
 import com.preproject_35.security.auth.handler.MemberAuthenticationSuccessHandler;
 import com.preproject_35.security.auth.jwt.JwtTokenizer;
 import com.preproject_35.security.utils.CustomAuthorityUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -28,8 +31,10 @@ public class SecurityConfiguration {
     private final JwtTokenizer jwtTokenizer;
     private final CustomAuthorityUtils authorityUtils;
 
-    public SecurityConfiguration(JwtTokenizer jwtTokenizer) {
+    public SecurityConfiguration(JwtTokenizer jwtTokenizer,
+                                   CustomAuthorityUtils authorityUtils) {
         this.jwtTokenizer = jwtTokenizer;
+        this.authorityUtils = authorityUtils;
     }
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -42,9 +47,18 @@ public class SecurityConfiguration {
                 .and()
                 .formLogin().disable()
                 .httpBasic().disable()
+                .exceptionHandling()
+                .authenticationEntryPoint(new MemberAuthenticationEntryPoint())
+                .accessDeniedHandler(new MemberAccessDeniedHandler())
+                .and()
                 .apply(new CustomFilterConfigurer())
                 .and()
                 .authorizeHttpRequests(authorize -> authorize
+                        .antMatchers(HttpMethod.POST, "/*/members").permitAll()         // 회원등록 누구나 가능
+                        .antMatchers(HttpMethod.PATCH, "/*/members/**").hasRole("USER")  // 회원 정보 수정 회원만 가능
+                        .antMatchers(HttpMethod.GET, "/*/members").hasRole("ADMIN")     // 모든 회원 정보는 관리자만 접근 가능
+                        .antMatchers(HttpMethod.GET, "/*/members/**").hasAnyRole("USER", "ADMIN")  // 특정 회원 조회 누구나
+                        .antMatchers(HttpMethod.DELETE, "/*/members/**").hasRole("USER") // 탈퇴 회원만
                         .anyRequest().permitAll()
                 );
         return http.build();
