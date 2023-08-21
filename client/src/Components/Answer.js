@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { Button } from '../Components/Button';
 import { QuestionDetailContainer } from '../Pages/styles/QuestionDetailContainer';
 
-const Answer = () => {
-  const [answers, setAnswers] = useState([]);
+const Answer = (props) => {
+  const [answers, setAnswers] = useState(props.answers ? props.answers : []);
   const [editingId, setEditingId] = useState(null);
   const [editedContent, setEditedContent] = useState('');
 
@@ -38,12 +39,20 @@ const Answer = () => {
         <div className="answer-container" key={answer.id}>
           <div className="author-container">
             <div className="author">{answer.author}</div>
-            <div className="author-right-container"></div>
-            <div className="my-text">
-              <div>edit</div>
-              <div>delete</div>
+            <div className="author-right-container">
+              <div className="my-text">
+                <div
+                  onClick={() => handleEdit(answer.id, answer.content)}
+                  aria-hidden="true"
+                >
+                  <img src="/images/mdi-pen.png" alt=""></img>
+                </div>
+                <div onClick={() => handleDelete(answer.id)} aria-hidden="true">
+                  <img src="/images/mdi-trash.png" alt=""></img>
+                </div>
+              </div>
+              <div className="time">{answer.createdAt}</div>
             </div>
-            <div className="time">{answer.createdAt}</div>
           </div>
           {editingId === answer.id ? (
             <div>
@@ -59,15 +68,9 @@ const Answer = () => {
             </div>
           ) : (
             <div>
-              <div className="my-text">
-                {/* 편집 모드로 전환하는 버튼 */}
-                <button onClick={() => handleEdit(answer.id, answer.content)}>
-                  Edit
-                </button>
-                {/* 답변을 삭제하는 버튼 */}
-                <button onClick={() => handleDelete(answer.id)}>Delete</button>
+              <div className="content">
                 {/* 답변 내용을 표시 */}
-                <p>{answer.content}</p>
+                {answer.content}
               </div>
             </div>
           )}
