@@ -1,77 +1,116 @@
 package com.preproject_35;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import com.preproject_35.security.jwt.JwtTokenizer;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.ExpiredJwtException;
+import com.preproject_35.security.auth.jwt.JwtTokenizer;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.io.Encoders;
-import io.jsonwebtoken.security.Keys;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import java.util.concurrent.TimeUnit;
 
 import java.security.Key;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
-/**
- * 이 테스트 클래스를 통과한 경우, 다음과 같은 사항을 검증한 것입니다:
- * @토큰생성: JwtTokenizer 클래스의 generateAccessToken 메서드가 유효한 JWT 액세스 토큰을 생성하고 반환한다. 생성된 토큰은 Null이 아니며, 테스트 시 사용한 claims(클레임), subject(주제), expiration(만료 시간)을 올바르게 포함한다.
- * @토큰유효성검사: 생성된 토큰을 다시 분석하면, 올바르게 생성된 액세스 토큰의 클레임과 주제를 얻을 수 있습니다. 토큰에 포함된 정보와 테스트에 사용된 정보가 일치하는지 확인하였습니다.
- * @토큰서명검증: 생성된 토큰의 서명이 올바른지 검증하였습니다. 유효한 비밀 키를 사용하여 토큰을 분석하고 검증하였으므로, 토큰의 서명도 올바릅니다.
- * @토큰만료시간 검증: 토큰 만료 시간이 테스트 시 지정한 만료 시간과 일치하는지 확인하였습니다.
- * @클레임검증: 토큰에 포함된 클레임(예: "role": "user")이 정확한지 확인하였습니다.
- */
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class JwtTokenizerTest {
-
-    private JwtTokenizer tokenizer;
+    private static JwtTokenizer jwtTokenizer;
     private String secretKey;
-    private String base64SecretKey;
-    private Key key;
+    private String base64EncodedSecretKey;
 
-    private static final String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    private static final int KEY_LENGTH = 32;
+    // 테스트에 사용할 Secret Key를 Base64 형식으로 인코딩한 후, 인코딩 된 Secret Key를 각 테스트 케이스에서 사용
+    @BeforeAll
+    public void init() {
+        jwtTokenizer = new JwtTokenizer();
+        secretKey = "kevin1234123412341234123412341234";  // encoded "a2V2aW4xMjM0MTIzNDEyMzQxMjM0MTIzNDEyMzQxMjM0"
 
-    private static String generateKey(int length) {
-        Random random = new Random();
-        StringBuilder key = new StringBuilder();
-
-        for (int i = 0; i < length; i++) {
-            int index = random.nextInt(characters.length());
-            key.append(characters.charAt(index));
-        }
-
-        return key.toString();
+        base64EncodedSecretKey = jwtTokenizer.encodeBase64SecretKey(secretKey);
     }
 
-    @BeforeEach
-    public void setUp() {
-        tokenizer = new JwtTokenizer();
-        secretKey = generateKey(KEY_LENGTH); // Use the key generator to create a key
-        base64SecretKey = Encoders.BASE64.encode(secretKey.getBytes());
-        byte[] keyBytes = Decoders.BASE64.decode(base64SecretKey);
-        key = Keys.hmacShaKeyFor(keyBytes);
-    }
-
+    // Plain Text인 Secret Key가 Base64 형식으로 인코딩이 정상적으로 수행이 되는지 테스트
     @Test
-    public void testGenerateAccessToken() {
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("role", "user");
-        String subject = "user1";
-        Date expiration = new Date(System.currentTimeMillis() + 600000); // 토큰 만료 시간: 10분 후
-
-        String token = tokenizer.generateAccessToken(claims, subject, expiration, base64SecretKey);
-
-        assertNotNull(token);
-
-        Jws<Claims> parsedToken = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
-        assertEquals("user", parsedToken.getBody().get("role"));
-        assertEquals("user1", parsedToken.getBody().getSubject());
+    public void encodeBase64SecretKeyTest() {
+        System.out.println(base64EncodedSecretKey);
+        // Base64 형식으로 인코딩 된 Secret Key를 디코딩한 값이 원본 Plain Text Secret Key가 일치하는지
+        assertThat(secretKey, is(new String(Decoders.BASE64.decode(base64EncodedSecretKey))));
     }
+
+    // JwtTokenizer가 Access Token을 정상적으로 생성하는지 테스트
+    @Test
+    public void generateAccessTokenTest() {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("memberId", 1);
+        claims.put("roles", List.of("USER"));
+
+        String subject = "test access token";
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.MINUTE, 10);
+        Date expiration = calendar.getTime();
+
+        String accessToken = jwtTokenizer.generateAccessToken(claims, subject, expiration, base64EncodedSecretKey);
+
+        System.out.println(accessToken);
+        // 생성된 Access Token이 null이 아닌지 여부만 테스트
+        assertThat(accessToken, notNullValue());
+    }
+
+    // JwtTokenizer가 Refresh Token을 정상적으로 생성하는지 테스트
+    // Access Token과 테스트 과정은 동일
+    @Test
+    public void generateRefreshTokenTest() {
+        String subject = "test refresh token";
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.HOUR, 24);
+        Date expiration = calendar.getTime();
+
+        String refreshToken = jwtTokenizer.generateRefreshToken(subject, expiration, base64EncodedSecretKey);
+
+        System.out.println(refreshToken);
+
+        assertThat(refreshToken, notNullValue());
+    }
+
+    // JwtTokenizer의 verifySignature() 메서드가 Signature를 잘 검증하는지 테스트
+    @DisplayName("does not throw any Exception when jws verify")
+    @Test
+    public void verifySignatureTest() {
+        String accessToken = getAccessToken(Calendar.MINUTE, 10);
+        assertDoesNotThrow(() -> jwtTokenizer.verifySignature(accessToken, base64EncodedSecretKey));
+    }
+
+    // JWT 생성 시 지정한 만료일시가 지나면 JWT가 정말 만료되는지를 테스트
+    @DisplayName("throw ExpiredJwtException when jws verify")
+    @Test
+    public void verifyExpirationTest() throws InterruptedException {
+        String accessToken = getAccessToken(Calendar.SECOND, 1);
+        assertDoesNotThrow(() -> jwtTokenizer.verifySignature(accessToken, base64EncodedSecretKey));
+
+        TimeUnit.MILLISECONDS.sleep(1500);
+
+        assertThrows(ExpiredJwtException.class, () -> jwtTokenizer.verifySignature(accessToken, base64EncodedSecretKey));
+    }
+
+    private String getAccessToken(int timeUnit, int timeAmount) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("memberId", 1);
+        claims.put("roles", List.of("USER"));
+
+        String subject = "test access token";
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(timeUnit, timeAmount);
+        Date expiration = calendar.getTime();
+        String accessToken = jwtTokenizer.generateAccessToken(claims, subject, expiration, base64EncodedSecretKey);
+
+        return accessToken;
+    }
+
+
 }
 

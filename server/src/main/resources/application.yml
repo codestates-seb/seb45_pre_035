@@ -9,5 +9,11 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
-  jwt:
-    expiration: 86400
+mail:
+  address:
+   admin: rjf654@gmail.com
+
+jwt:
+  key: ${JWT_SECRET_KEY}
+  access-token-expiration-minutes: 30
+  refresh-token-expiration-minutes: 420
