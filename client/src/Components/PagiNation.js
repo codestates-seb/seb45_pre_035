@@ -33,11 +33,41 @@ const PaginationContainer = styled.div`
     display: flex;
   }
 `;
+const PagiNumButton = styled.button`
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
+  }
+`;
 
 // eslint-disable-next-line react/prop-types
 const PagiNation = ({ count, page, onPageChange }) => {
+  const numPages = Math.ceil(count / 6);
+
+  const pageButtons = () => {
+    const buttons = [];
+    for (let i = 1; i <= numPages && i <= 6; i++) {
+      buttons.push(
+        <PagiNumButton
+          key={i}
+          onClick={() => onPageChange(i)}
+          className={page === i ? 'active' : ''}
+        >
+          {i}
+        </PagiNumButton>,
+      );
+    }
+    return buttons;
+  };
+
   return (
     <PaginationContainer>
+      {pageButtons()}
       <Pagination
         containerClassName={'pagination'}
         activeClassName={'active'}

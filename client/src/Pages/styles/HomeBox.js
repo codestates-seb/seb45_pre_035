@@ -9,3 +9,9 @@ export const HomeBox = styled.div`
   width: 883px;
   height: 681px;
 `;
+export const QuestionListContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 51px;
+`;

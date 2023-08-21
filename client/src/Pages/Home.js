@@ -5,7 +5,7 @@ import { api } from '../Api/api';
 import QuestionListItem from '../Components/QuestionListItem';
 import PagiNation from '../Components/PagiNation';
 import React, { useEffect, useState } from 'react';
-import { HomeBox } from './styles/HomeBox';
+import { HomeBox, QuestionListContainer } from './styles/HomeBox';
 
 export default function Home(props) {
   const [questions, setQuestions] = useState(
@@ -47,9 +47,11 @@ export default function Home(props) {
   return (
     <PageStyle>
       <HomeBox>
-        {currentQuestions.map((question) => (
-          <QuestionListItem key={question.questionId} question={question} />
-        ))}
+        <QuestionListContainer>
+          {currentQuestions.map((question) => (
+            <QuestionListItem key={question.questionId} question={question} />
+          ))}
+        </QuestionListContainer>
         <PagiNation
           page={currentPage}
           count={count}
