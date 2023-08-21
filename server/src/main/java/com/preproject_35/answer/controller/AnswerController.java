@@ -2,143 +2,89 @@ package com.preproject_35.answer.controller;
 
 import com.preproject_35.answer.dto.AnswerPatchDto;
 import com.preproject_35.answer.dto.AnswerPostDto;
-import com.preproject_35.answer.dto.AnswerResponseDto;
 import com.preproject_35.answer.entity.Answer;
 import com.preproject_35.answer.mapper.AnswerMapper;
 import com.preproject_35.answer.service.AnswerService;
+import com.preproject_35.member.entity.Member;
+import com.preproject_35.member.repository.MemberRepository;
+import com.preproject_35.question.entity.Question;
+import com.preproject_35.question.repository.QuestionRepository;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.net.URI;
+import java.util.Optional;
 
-@RestController
-@RequestMapping("/answers")
 @Slf4j
 @Validated
+@AllArgsConstructor
+@RestController
+@RequestMapping("/questions")
 public class AnswerController {
-
-    // private final QuestionService questionService;
-    // private final MemberService memberService;
-    private final AnswerService answerService;
+    private final static String QUESTION_DEFAULT_URL = "/questions";
     private final AnswerMapper answerMapper;
+    private final AnswerService answerService;
+    private final QuestionRepository questionRepository;
+    private final MemberRepository memberRepository;
 
-    public AnswerController(AnswerService answerService, AnswerMapper answerMapper) {
-        this.answerService = answerService;
-        this.answerMapper = answerMapper;
-    }
-    // 답변 등록, 매개변수 값에 @PathVariable questionId 추가 필요
-    @PostMapping
-    public ResponseEntity postAnswer(@Valid @RequestBody AnswerPostDto answerPostDto) {
+    // 답변 등록
+    @PostMapping("/{question-id}/answers")
+    public ResponseEntity postAnswer(@PathVariable("question-id") @Positive long questionId,
+                                     @Valid @RequestBody AnswerPostDto answerPostDto) throws ChangeSetPersister.NotFoundException {
+        Optional<Question> findQuestion = questionRepository.findByQuestionId(questionId);
+        Optional <Member> findMember = memberRepository.findByEmail(answerPostDto.getEmail());
+        Question question = findQuestion.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
+        Member member = findMember.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
+        Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto, question, member);
+        answerService.createAnswer(answer);
 
-        Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto);
-        Answer savedAnswer = answerService.createAnswer(answer);
+        URI location = UriComponentsBuilder
+                .newInstance()
+                .path(QUESTION_DEFAULT_URL + "/{question-id}")
+                .buildAndExpand(questionId)
+                .toUri();
 
-        AnswerResponseDto responseDto = new AnswerResponseDto();
-        responseDto.setSuccess(true);
-        responseDto.setMessage("답변이 등록되었습니다.");
-        responseDto.setAnswerId(savedAnswer.getAnswerId());
-        responseDto.setContent(savedAnswer.getContent());
-        responseDto.setCreatedAt(savedAnswer.getCreateDate());
-//        responseDto.setAuthor(savedAnswer.getAuthor());
-//        responseDto.setMemberId(savedAnswer.getMemberId());
-
-        return new ResponseEntity<>(responseDto, HttpStatus.CREATED);
-//        Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto);
-//        Answer response = answerService.createAnswer(answer);
-//
-//        return new ResponseEntity<>(answerMapper.answerToAnswerResponseDto(response), HttpStatus.CREATED);
-    }
-    // 답변 수정, 매개변수 값에 @PathVariable questionId 추가 필요
-    @PatchMapping("/{answer-id}")
-    public ResponseEntity patchAnswer(@PathVariable("answer-id") @Positive long answerId, @RequestBody AnswerPatchDto answerPatchDto) {
-
-        answerPatchDto.setAnswerId(answerId);
-        Answer response = answerService.updateAnswer(answerMapper.answerPatchDtoToAnswer(answerPatchDto));
-
-        AnswerResponseDto responseDto = new AnswerResponseDto();
-        responseDto.setSuccess(true);
-        responseDto.setMessage("답변이 수정되었습니다.");
-        responseDto.setAnswerId(response.getAnswerId());
-        responseDto.setContent(response.getContent());
-        responseDto.setCreatedAt(response.getCreateDate());
-//        responseDto.setAuthor(updatedAnswer.getAuthor());
-//        responseDto.setMemberId(updatedAnswer.getMemberId());
-
-        return new ResponseEntity<>(responseDto, HttpStatus.OK);
-//        return new ResponseEntity<>(answerMapper.answerToAnswerResponseDto(response), HttpStatus.OK);
+        return ResponseEntity.created(location).build();
     }
 
-    // 특정 답변 조회, 매개변수 값에 @PathVariable questionId 추가 필요
-    @GetMapping("/{answer-id}")
-    public ResponseEntity<AnswerResponseDto> getAnswer(@PathVariable("answer-id") Long answerId) {
-        Answer answer = answerService.findAnswer(answerId);
+    // 답변 수정
+    @PatchMapping("/{question-id}/answers/{answer-id}")
+    public ResponseEntity patchAnswer(@PathVariable("question-id") @Positive long questionId,
+                                      @PathVariable("answer-id") @Positive long answerId,
+                                      @Valid @RequestBody AnswerPatchDto answerPatchDto) throws ChangeSetPersister.NotFoundException {
+        Optional <Member> findMember = memberRepository.findByEmail(answerPatchDto.getEmail());
+        Member member = findMember.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
 
-        AnswerResponseDto responseDto = new AnswerResponseDto();
-        responseDto.setSuccess(true);
-        responseDto.setMessage("조회가 성공적으로 완료되었습니다.");
-        responseDto.setAnswerId(answer.getAnswerId());
-        responseDto.setContent(answer.getContent());
-        responseDto.setCreatedAt(answer.getCreateDate());
-//        responseDto.setAuthor(answer.getAuthor());
-//        responseDto.setMemberId(answer.getMemberId());
+        Answer answer = answerMapper.answerPatchDtoToAnswer(answerPatchDto, member);
 
-        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+        URI location = UriComponentsBuilder
+                .newInstance()
+                .path(QUESTION_DEFAULT_URL + "/{question-id}")
+                .buildAndExpand(questionId)
+                .toUri();
+
+        return ResponseEntity.ok().location(location).build();
     }
 
-    // 전체 답변 조회, 매개변수 값에 @PathVariable questionId 추가 필요
-    @GetMapping
-    public ResponseEntity<List<AnswerResponseDto>> getAnswers() {
-        List<Answer> answers = answerService.findAllAnswer();
-
-        List<AnswerResponseDto> responseDtos = answers.stream().map(answer -> {
-            AnswerResponseDto responseDto = new AnswerResponseDto();
-            responseDto.setSuccess(true);
-            responseDto.setMessage("조회가 성공적으로 완료되었습니다.");
-            responseDto.setAnswerId(answer.getAnswerId());
-            responseDto.setContent(answer.getContent());
-            responseDto.setCreatedAt(answer.getCreateDate());
-//            responseDto.setAuthor(answer.getAuthor());
-//            responseDto.setMemberId(answer.getMemberId());
-            return responseDto;
-        }).collect(Collectors.toList());
-
-        return new ResponseEntity<>(responseDtos, HttpStatus.OK);
-    }
-
-
-    /*
-    @GetMapping("/{answer-id}")
-    public ResponseEntity getAnswer(@PathVariable("answer-id") @Positive long answerId) {
-
-        Answer response = answerService.findAnswer(answerId);
-
-        return new ResponseEntity<>(answerMapper.answerToAnswerResponseDto(response), HttpStatus.OK);
-    }
-
-    @GetMapping
-    public ResponseEntity getAnswers() {
-        List<Answer> answers = answerService.findAllAnswer();
-        List<AnswerResponseDto> response =
-                answers.stream()
-                        .map(answer -> answerMapper.answerToAnswerResponseDto(answer))
-                        .collect(Collectors.toList());
-
-        return new ResponseEntity(response, HttpStatus.OK);
-    }
-
-     */
-    // 특정 답변 삭제, 매개변수 값에 @PathVariable questionId 추가 필요
-    @DeleteMapping("/{answer-id}")
-    public ResponseEntity<String> deleteAnswer(@PathVariable("answer-id") @Positive long answerId){
-
+    // 답변 삭제
+    @DeleteMapping("/{question-id}/answers/{answer-id}")
+    public ResponseEntity deleteAnswer(@PathVariable("question-id") @Positive long questionId,
+                                       @PathVariable("answer-id") @Positive long answerId) {
         answerService.deleteAnswer(answerId);
 
-        return new ResponseEntity("답변이 삭제되었습니다.", HttpStatus.NO_CONTENT);
+        URI location = UriComponentsBuilder
+                .newInstance()
+                .path(QUESTION_DEFAULT_URL + "/{question-id}")
+                .buildAndExpand(questionId)
+                .toUri();
+
+        return ResponseEntity.ok().location(location).build();
     }
 }

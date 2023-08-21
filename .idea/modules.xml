@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/preproject_35.iml" filepath="$PROJECT_DIR$/.idea/modules/preproject_35.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/preproject_35.main.iml" filepath="$PROJECT_DIR$/.idea/modules/preproject_35.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/preproject_35.test.iml" filepath="$PROJECT_DIR$/.idea/modules/preproject_35.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/seb45_pre_035 오후 4.18.30.iml" filepath="$PROJECT_DIR$/.idea/seb45_pre_035 오후 4.18.30.iml" />
     </modules>
   </component>
 </project>
