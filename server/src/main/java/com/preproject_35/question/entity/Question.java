@@ -2,6 +2,7 @@ package com.preproject_35.question.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.preproject_35.answer.entity.Answer;
+import com.preproject_35.comment.question.entity.QuestionComment;
 import com.preproject_35.member.Entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,8 +34,8 @@ public class Question {
     private LocalDateTime createdAt = LocalDateTime.now();
     private boolean success = true;
 
-    // Question 에서만 Answer 정보 조회할거니까 1:N 단방향 엔티티 매핑
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    // Question 에서만 Answer 정보 조회 : 1:N 단방향 엔티티 매핑
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Answer> answers = new ArrayList<>();
 
     /**
@@ -46,4 +47,8 @@ public class Question {
     @ManyToOne
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
+
+    // Question 에서 QuestionComment 정보 조회 : 양방향 매핑
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<QuestionComment> questionComments = new ArrayList<>();
 }
