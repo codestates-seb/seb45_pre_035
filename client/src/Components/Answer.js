@@ -32,9 +32,19 @@ const Answer = () => {
 
   return (
     <QuestionDetailContainer>
+      <div className="title">{answers.length} Answer</div>
       {/* 답변 목록을 맵핑하여 각 답변을 렌더링 */}
       {answers.map((answer) => (
-        <div key={answer.id}>
+        <div className="answer-container" key={answer.id}>
+          <div className="author-container">
+            <div className="author">{answer.author}</div>
+            <div className="author-right-container"></div>
+            <div className="my-text">
+              <div>edit</div>
+              <div>delete</div>
+            </div>
+            <div className="time">{answer.createdAt}</div>
+          </div>
           {editingId === answer.id ? (
             <div>
               {/* 편집 중인 답변의 내용을 입력하는 텍스트 에어리어 */}
@@ -49,14 +59,16 @@ const Answer = () => {
             </div>
           ) : (
             <div>
-              {/* 답변 내용을 표시 */}
-              <p>{answer.content}</p>
-              {/* 편집 모드로 전환하는 버튼 */}
-              <button onClick={() => handleEdit(answer.id, answer.content)}>
-                Edit
-              </button>
-              {/* 답변을 삭제하는 버튼 */}
-              <button onClick={() => handleDelete(answer.id)}>Delete</button>
+              <div className="my-text">
+                {/* 편집 모드로 전환하는 버튼 */}
+                <button onClick={() => handleEdit(answer.id, answer.content)}>
+                  Edit
+                </button>
+                {/* 답변을 삭제하는 버튼 */}
+                <button onClick={() => handleDelete(answer.id)}>Delete</button>
+                {/* 답변 내용을 표시 */}
+                <p>{answer.content}</p>
+              </div>
             </div>
           )}
         </div>
