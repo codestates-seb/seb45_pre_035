@@ -42,17 +42,17 @@ public class QuestionCommentService {
     }
 
     // 댓글 삭제
-    public void deleteQuestionComment(long commentId) {
-        QuestionComment findQuestionComment = findVerifiedQuestionComment(commentId);
+    public void deleteQuestionComment(long questionCommentId) {
+        QuestionComment findQuestionComment = findVerifiedQuestionComment(questionCommentId);
 
         questioncommentRepository.delete(findQuestionComment);
 
     }
 
     // 존재하는 comment 여부 검증
-    public QuestionComment findVerifiedQuestionComment(long commentId) {
+    public QuestionComment findVerifiedQuestionComment(long questionCommentId) {
         Optional<QuestionComment> optionalQuestionComment =
-                questioncommentRepository.findById(commentId);
+                questioncommentRepository.findById(questionCommentId);
         QuestionComment findQuestionComment =
                 optionalQuestionComment.orElseThrow(() ->
                         new BusinessLogicException(ExceptionCode.COMMENT_NOT_FOUND));

@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 public class QuestionCommentPatchDto {
-    private long commentId;
+    private long questionCommentId;
     @NotBlank(message = "Content cannot be blank")
     private String content;
 

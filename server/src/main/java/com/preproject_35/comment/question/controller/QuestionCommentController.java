@@ -40,10 +40,10 @@ public class QuestionCommentController {
     // 질문 댓글 수정
     @PatchMapping("/{question-id}/comments/{comment-id}")
     public ResponseEntity patchQuestionComment(@PathVariable("question-id") long questionId,
-                                               @PathVariable("comment-id") long commentId,
+                                               @PathVariable("comment-id") long questionCommentId,
                                                @RequestBody QuestionCommentPatchDto questionCommentPatchDto) {
 
-        questionCommentPatchDto.setCommentId(commentId);
+        questionCommentPatchDto.setQuestionCommentId(questionCommentId);
 
         QuestionComment response =
                 questionCommentService.updateQuestionComment(mapper.questionCommentPatchDtoToQuestionComment(questionCommentPatchDto));
@@ -67,9 +67,9 @@ public class QuestionCommentController {
     // 질문 댓글 삭제
     @DeleteMapping("/{question-id}/comments/{comment-id}")
     public ResponseEntity deleteQuestionComment(@PathVariable("question-id") long questionId,
-                                                @PathVariable("comment-id") long commentId) {
+                                                @PathVariable("comment-id") long questionCommentId) {
 
-        questionCommentService.deleteQuestionComment(commentId);
+        questionCommentService.deleteQuestionComment(questionCommentId);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
