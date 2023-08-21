@@ -48,6 +48,8 @@ dependencies {
 
 	// Spring Security Test
 	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mockito:mockito-core:3.3.3'
 
 	// Google Gson
 	implementation 'com.google.code.gson:gson:2.8.9'
