@@ -1,5 +1,7 @@
 package com.preproject_35.question.service;
 
+import com.preproject_35.error.BusinessLogicException;
+import com.preproject_35.error.ExceptionCode;
 import com.preproject_35.question.entity.Question;
 import com.preproject_35.question.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
@@ -33,10 +35,18 @@ public class QuestionService {
 
     public List<Question> findMyQuestion(long memberId) {
 
+        if (findMyVerifiedQuestions(memberId).isEmpty()) {
+            throw new BusinessLogicException(ExceptionCode.QUESTION_NOT_FOUND);
+        }
+
         return findMyVerifiedQuestions(memberId);
     }
 
     public List<Question> findQuestions() {
+
+        if (questionRepository.findAll().isEmpty()) {
+            throw new BusinessLogicException(ExceptionCode.QUESTION_NOT_FOUND);
+        }
 
         return questionRepository.findAll();
     }

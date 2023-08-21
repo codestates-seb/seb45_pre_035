@@ -1,7 +1,7 @@
 package com.preproject_35.member.Repository;
 
 
-import com.preproject_35.member.Member;
+import com.preproject_35.member.Entity.Member;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

@@ -1,5 +1,7 @@
 package com.preproject_35.answer.entity;
 
+import com.preproject_35.member.Entity.Member;
+import com.preproject_35.question.entity.Question;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,7 +24,7 @@ public class Answer {
 
     @CreationTimestamp // 답변 작성 시간
     private LocalDateTime createDate;
-/*
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id") // FK 참조 컬럼, question 엔티티에도 매핑 필요
     private Question question;
@@ -31,7 +33,7 @@ public class Answer {
     @JoinColumn(name = "member_id") // FK 참조 컬럼, member 엔티티에도 매핑 필요
     private Member member;
 
-*/
+
 
 }
 

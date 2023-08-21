@@ -1,8 +1,8 @@
 package com.preproject_35.member.Service;
 
-import com.preproject_35.member.BusinessLogicException;
-import com.preproject_35.member.ExceptionCode;
-import com.preproject_35.member.Member;
+import com.preproject_35.error.BusinessLogicException;
+import com.preproject_35.error.ExceptionCode;
+import com.preproject_35.member.Entity.Member;
 import com.preproject_35.member.Repository.MemberRepository;
 import org.springframework.stereotype.Service;
 

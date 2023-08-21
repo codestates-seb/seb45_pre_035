@@ -3,7 +3,7 @@ package com.preproject_35.member.Controller;
 import com.preproject_35.member.Dto.MemberPostDto;
 import com.preproject_35.member.Dto.MemberResponseDto;
 import com.preproject_35.member.Mapper.MemberMapper;
-import com.preproject_35.member.Member;
+import com.preproject_35.member.Entity.Member;
 import com.preproject_35.member.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,11 +25,8 @@ import java.util.stream.Collectors;
 @Validated
 public class MemberController {
 
-    @Autowired
     private final MemberService memberService;
-    @Autowired
     private final MemberMapper mapper;
-
 
     public MemberController(MemberService memberService, MemberMapper mapper) {
         this.memberService = memberService;
