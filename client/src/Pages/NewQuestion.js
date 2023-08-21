@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { Button } from '../Components/Button';
 import { PageStyle } from './styles/PageStyle';
+import BeforePage from '../Components/BeforePage';
+import { api } from '../Api/api';
 
 const QuestionFormContainer = styled.div`
   display: inline-flex;
@@ -114,15 +116,9 @@ const NewQuestion = () => {
     if (!submitEnabled) return;
 
     try {
-      const response = await fetch('/api/questions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ title, content }),
-      });
+      const response = await api('/api/questions', 'post', { title, content });
 
-      if (response.ok) {
+      if (response.success) {
         const question = await response.json();
         navigate.push(`/question/${question.questionId}`);
       } else {
@@ -135,6 +131,7 @@ const NewQuestion = () => {
 
   return (
     <PageStyle>
+      <BeforePage />
       <QuestionFormContainer>
         <TitleBox>
           <TitleBoxTitle>Title</TitleBoxTitle>
@@ -158,10 +155,10 @@ const NewQuestion = () => {
             required
           />
         </ContentBox>
-        <button onClick={handleSubmit} disabled={!submitEnabled}>
+        {/* <button onClick={handleSubmit} disabled={!submitEnabled}>
           Submit
-        </button>
-        <Button primary onClick={handleSubmit}>
+        </button> */}
+        <Button primary onClick={handleSubmit} disabled={!submitEnabled}>
           Submit
         </Button>
       </QuestionFormContainer>
