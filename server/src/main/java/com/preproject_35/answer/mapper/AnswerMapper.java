@@ -2,8 +2,10 @@ package com.preproject_35.answer.mapper;
 
 import com.preproject_35.answer.dto.AnswerPatchDto;
 import com.preproject_35.answer.dto.AnswerPostDto;
+import com.preproject_35.answer.dto.AnswerResponseDto;
 import com.preproject_35.answer.entity.Answer;
 import com.preproject_35.member.entity.Member;
+import com.preproject_35.question.Dto.QuestionResponseDto;
 import com.preproject_35.question.entity.Question;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
@@ -25,5 +27,28 @@ public interface AnswerMapper {
         answer.setMember(member);
         answer.setContent(answerPatchDto.getContent());
         return answer;
+    }
+    default AnswerResponseDto answerToAnswerPostResponseDto(Answer answer) {
+        AnswerResponseDto answerResponseDto = new AnswerResponseDto();
+        answerResponseDto.setSuccess(true);
+        answerResponseDto.setMessage("답변이 등록되었습니다.");
+        answerResponseDto.setAnswerId(answer.getAnswerId());
+        answerResponseDto.setContent(answer.getContent());
+        answerResponseDto.setCreateAt(answer.getCreatedAt());
+        answerResponseDto.setAuthor(answer.getMember().getUsername());
+        answerResponseDto.setMemberId(answer.getMember().getMemberId());
+        return answerResponseDto;
+    }
+
+    default AnswerResponseDto answerToAnswerPatchResponseDto(Answer answer) {
+        AnswerResponseDto answerResponseDto = new AnswerResponseDto();
+        answerResponseDto.setSuccess(true);
+        answerResponseDto.setMessage("답변이 수정되었습니다.");
+        answerResponseDto.setAnswerId(answer.getAnswerId());
+        answerResponseDto.setContent(answer.getContent());
+        answerResponseDto.setCreateAt(answer.getModifiedAt());
+        answerResponseDto.setAuthor(answer.getMember().getUsername());
+        answerResponseDto.setMemberId(answer.getMember().getMemberId());
+        return answerResponseDto;
     }
 }

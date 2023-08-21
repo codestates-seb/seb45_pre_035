@@ -2,6 +2,7 @@ package com.preproject_35.answer.controller;
 
 import com.preproject_35.answer.dto.AnswerPatchDto;
 import com.preproject_35.answer.dto.AnswerPostDto;
+import com.preproject_35.answer.dto.AnswerResponseDto;
 import com.preproject_35.answer.entity.Answer;
 import com.preproject_35.answer.mapper.AnswerMapper;
 import com.preproject_35.answer.service.AnswerService;
@@ -45,13 +46,15 @@ public class AnswerController {
         Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto, question, member);
         answerService.createAnswer(answer);
 
+        AnswerResponseDto answerResponseDto = answerMapper.answerToAnswerPostResponseDto(answer);
+
         URI location = UriComponentsBuilder
                 .newInstance()
                 .path(QUESTION_DEFAULT_URL + "/{question-id}")
                 .buildAndExpand(questionId)
                 .toUri();
 
-        return ResponseEntity.created(location).build();
+        return ResponseEntity.created(location).body(answerResponseDto);
     }
 
     // 답변 수정
@@ -64,13 +67,15 @@ public class AnswerController {
 
         Answer answer = answerMapper.answerPatchDtoToAnswer(answerPatchDto, member);
 
+        AnswerResponseDto answerResponseDto = answerMapper.answerToAnswerPatchResponseDto(answer);
+
         URI location = UriComponentsBuilder
                 .newInstance()
                 .path(QUESTION_DEFAULT_URL + "/{question-id}")
                 .buildAndExpand(questionId)
                 .toUri();
 
-        return ResponseEntity.ok().location(location).build();
+        return ResponseEntity.ok().location(location).body(answerResponseDto);
     }
 
     // 답변 삭제

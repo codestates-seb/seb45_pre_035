@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 public class AnswerResponseDto {
     // 질문 등록, 수정, 조회 시, 응답으로 보여줄 것
     private boolean success;
+    private String message;
     private long answerId;
     private String content;
     private LocalDateTime createAt;

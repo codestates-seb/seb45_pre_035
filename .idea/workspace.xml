@@ -5,31 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/preproject_35.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/preproject_35.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/generated/com/preproject_35/answer/mapper/AnswerMapperImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/advice/GlobalExceptionAdvice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/controller/AnswerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerPatchDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerPostDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/entity/Answer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/mapper/AnswerMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/repository/AnswerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/service/AnswerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenRefresher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtTokenizer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/JwtValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/RefreshTokenStore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/Preproject35Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/Preproject35Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/controller/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/controller/AnswerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/dto/AnswerResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/entity/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/entity/Answer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/mapper/AnswerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/answer/mapper/AnswerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/dto/MemberPostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/member/dto/MemberPostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/com/preproject_35/AnswerControllerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +107,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JwtTokenizerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AnswerControllerTest.postAnswerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
@@ -136,7 +120,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.preproject_35.JwtTokenizerTest&quot;" />
+            <option value="&quot;com.preproject_35.AnswerControllerTest.postAnswerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -144,10 +128,10 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="JwtTokenizerTest.testGenerateAccessToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MemberControllerMockTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
@@ -160,7 +144,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.preproject_35.JwtTokenizerTest.testGenerateAccessToken&quot;" />
+            <option value="&quot;com.preproject_35.MemberControllerMockTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -168,29 +152,55 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MemberControllerMockTest.postMemberTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.preproject_35.MemberControllerMockTest.postMemberTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="QuestionControllerTest.postQuestionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.preproject_35.QuestionControllerTest.postQuestionTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="Preproject35Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -209,10 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.QuestionControllerTest.postQuestionTest" />
+        <item itemvalue="Gradle.AnswerControllerTest.postAnswerTest" />
+        <item itemvalue="Gradle.MemberControllerMockTest.postMemberTest" />
+        <item itemvalue="Gradle.MemberControllerMockTest" />
         <item itemvalue="Application.Preproject35Application" />
-        <item itemvalue="Gradle.server [build]" />
-        <item itemvalue="Gradle.JwtTokenizerTest.testGenerateAccessToken" />
-        <item itemvalue="Gradle.JwtTokenizerTest" />
       </list>
     </recent_temporary>
   </component>

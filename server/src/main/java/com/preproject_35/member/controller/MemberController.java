@@ -5,7 +5,6 @@ import com.preproject_35.member.dto.MemberResponseDto;
 import com.preproject_35.member.entity.Member;
 import com.preproject_35.member.mapper.MemberMapper;
 import com.preproject_35.member.service.MemberService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -25,9 +24,7 @@ import java.util.stream.Collectors;
 @Validated
 public class MemberController {
 
-    @Autowired
     private final MemberService memberService;
-    @Autowired
     private final MemberMapper mapper;
 
 

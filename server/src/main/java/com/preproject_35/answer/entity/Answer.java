@@ -5,6 +5,7 @@ import com.preproject_35.question.entity.Question;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -34,12 +35,12 @@ public class Answer {
     @Column(columnDefinition = "TEXT", nullable = false) // content 필드를 TEXT 타입의 컬럼으로 지정
     private String content; // 답변 내용
 
-    @CreatedDate
-    @Column
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;    // 답변 생성 시간
 
     @LastModifiedDate
-    @Column
+    @Column(name = "modified_at", nullable = false, updatable = false)
     private LocalDateTime modifiedAt;   // 답변 수정 시간
 
 //    @OneToMany(mappedBy = "member")
