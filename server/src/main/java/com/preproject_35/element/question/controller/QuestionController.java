@@ -46,7 +46,10 @@ public class QuestionController {
 
         Question response = questionService.updateQuestion(mapper.questionPatchDtoToQuestion(questionPatchDto));
 
-        return new ResponseEntity<>(mapper.questionToQuestionResponseDto(response), HttpStatus.OK);
+        QuestionResponseDto responseDto = mapper.questionToQuestionResponseDto(response);
+        responseDto.setMessage("질문이 수정되었습니다.");
+
+        return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
     // 내 질문 목록 조회
