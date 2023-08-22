@@ -37,7 +37,6 @@ public class Question {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    private boolean success = true;
 
     // Question 에서만 Answer 정보 조회 : 1:N 단방향 엔티티 매핑
 //    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
