@@ -11,12 +11,11 @@ export const HomeBox = styled.div`
   .pagination {
     list-style: none;
     padding-bottom: 50px;
-    gap: 20px;
+    gap: 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 64px;
     color: #3f2305;
     width: 429px;
     height: 29px;
@@ -29,17 +28,21 @@ export const HomeBox = styled.div`
     line-height: normal;
   }
   .page_num {
+    display: block;
     border: none;
     background: transparent;
     font-size: 24px;
-    width: 30px;
+    width: 100px;
     font-weight: 400;
     padding: 10px;
     cursor: pointer;
+    text-align: center;
 
     &:hover {
       font-weight: bold;
     }
+  }
+  .pagination > li {
   }
   .active {
     font-weight: bold;
