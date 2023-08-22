@@ -22,22 +22,26 @@ export default function QuestionDetail(props) {
     props.question.answers ? props.question.answers : [],
   );
   const [editedContent, setEditedContent] = useState('');
+  const [editedTitle, setEditedTitle] = useState('');
   const [editing, setEditing] = useState(false);
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
-  const handleEdit = (currentContent) => {
-    setEditedContent(currentContent);
+
+  const handleEdit = () => {
+    setEditedContent(question.content);
+    setEditedTitle(question.title);
     setEditing(true);
   };
 
   const handleSaveEdit = async () => {
-    if (editedContent.trim() !== '') {
-      setQuestion({ ...question, content: editedContent });
+    if (editedContent.trim() !== '' && editedTitle.trim() !== '') {
+      setQuestion({ ...question, content: editedContent, title: editedTitle });
       setEditing(false);
       setEditedContent('');
       try {
         const response = await api(`/questions/${props.questionId}`, 'patch', {
           editedContent,
+          editedTitle,
         });
         if (response.success) {
           console.log(response);
@@ -88,7 +92,18 @@ export default function QuestionDetail(props) {
     <PageStyle>
       <BeforePage></BeforePage>
       <QuestionDetailContainer>
-        <div className="title">{question.title}</div>
+        {editing ? (
+          <div className="title-edit">
+            {/* 편집 중인 답변의 내용을 입력하는 텍스트 에어리어 */}
+            <input
+              value={editedTitle}
+              onChange={(e) => setEditedTitle(e.target.value)}
+            />
+            {/* 수정된 답변을 저장하는 버튼 */}
+          </div>
+        ) : (
+          <div className="title">{question.title}</div>
+        )}
         <div className="author-container">
           <div className="author">{question.author}</div>
           <div className="author-right-container">
