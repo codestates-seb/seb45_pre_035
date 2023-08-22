@@ -3,10 +3,12 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../server">
+      <sourceFolder url="file://$MODULE_DIR$/../../server/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../server/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../server/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="mysql-connector-j-8.1" level="project" />
   </component>
 </module>
