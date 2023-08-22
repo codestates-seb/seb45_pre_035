@@ -1,14 +1,26 @@
 spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2
   datasource:
-    url: jdbc:h2:mem:test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://pre35.chh5jixw7uel.ap-northeast-2.rds.amazonaws.com:3306
+    username: master
+    password: abcd1234
+
   jpa:
+    open-in-view: true
     hibernate:
       ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
     show-sql: true
+    properties:
+      hibernate.format_sql: true
+      dialect: org.hibernate.dialect.MySQL8InnoDBDialect
+
+logging:
+    level:
+      org.hibernate.SQL: debug
+
 mail:
   address:
    admin: rjf654@gmail.com

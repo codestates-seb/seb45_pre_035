@@ -53,6 +53,9 @@ dependencies {
 
 	// Google Gson
 	implementation 'com.google.code.gson:gson:2.8.9'
+
+	// MySQL
+	runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
 
