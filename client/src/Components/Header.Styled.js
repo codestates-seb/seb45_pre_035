@@ -11,6 +11,7 @@ export const HeaderContainer = styled.header`
   position: sticky;
   border-bottom: 2px solid #3f2305;
   background: #f2ead3;
+  box-shadow: 2px 2px 2px 2px gray;
 `;
 export const LogoContainer = styled.div`
   display: flex;
@@ -28,6 +29,9 @@ export const LogoContainer = styled.div`
     font-weight: 700;
     line-height: normal;
     cursor: pointer;
+    &:hover {
+      color: #deb887;
+    }
   }
 `;
 export const ButtonContainer = styled.div`
