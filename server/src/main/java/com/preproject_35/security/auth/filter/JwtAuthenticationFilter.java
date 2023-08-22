@@ -1,7 +1,7 @@
 package com.preproject_35.security.auth.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.preproject_35.element.member.Member;
+import com.preproject_35.element.member.entity.Member;
 import com.preproject_35.security.auth.jwt.JwtTokenizer;
 import com.preproject_35.security.login.LoginDto;
 import lombok.SneakyThrows;

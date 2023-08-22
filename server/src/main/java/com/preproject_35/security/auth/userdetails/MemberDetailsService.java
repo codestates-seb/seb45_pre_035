@@ -1,8 +1,9 @@
 package com.preproject_35.security.auth.userdetails;
 
-import com.preproject_35.element.member.BusinessLogicException;
-import com.preproject_35.element.member.ExceptionCode;
-import com.preproject_35.element.member.Member;
+
+import com.preproject_35.element.error.BusinessLogicException;
+import com.preproject_35.element.error.ExceptionCode;
+import com.preproject_35.element.member.entity.Member;
 import com.preproject_35.element.member.Repository.MemberRepository;
 import com.preproject_35.security.utils.CustomAuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;

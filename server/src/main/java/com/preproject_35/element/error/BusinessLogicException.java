@@ -1,4 +1,4 @@
-package com.preproject_35.element.member;
+package com.preproject_35.element.error;
 
 import lombok.Getter;
 

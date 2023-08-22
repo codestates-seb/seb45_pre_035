@@ -1,21 +1,25 @@
 package com.preproject_35.element.question.controller;
 
-import com.preproject_35.element.question.mapper.QuestionMapper;
-import com.preproject_35.element.question.service.QuestionService;
+import com.preproject_35.element.question.Dto.QuestionDeleteDto;
 import com.preproject_35.element.question.Dto.QuestionPatchDto;
 import com.preproject_35.element.question.Dto.QuestionPostDto;
 import com.preproject_35.element.question.Dto.QuestionResponseDto;
 import com.preproject_35.element.question.entity.Question;
+import com.preproject_35.element.question.mapper.QuestionMapper;
+import com.preproject_35.element.question.service.QuestionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/questions")
+@Validated
 public class QuestionController {
     private final QuestionService questionService;
     private final QuestionMapper mapper;
@@ -29,16 +33,14 @@ public class QuestionController {
     @PostMapping
     public ResponseEntity postQuestion(@Valid @RequestBody QuestionPostDto questionPostDto) {
 
-        Question question = mapper.questionPostDtoToQuestion(questionPostDto); // 타이틀, 내용
-
-        Question response = questionService.createQuestion(question); // 엔티티로
+        Question response = questionService.createQuestion(mapper.questionPostDtoToQuestion(questionPostDto));
 
         return new ResponseEntity<>(mapper.questionToQuestionResponseDto(response), HttpStatus.CREATED);
     }
 
     // 질문 수정
     @PatchMapping("/{question-id}")
-    public ResponseEntity patchQuestion(@PathVariable("question-id") long questionId,
+    public ResponseEntity patchQuestion(@PathVariable("question-id") @Min(1) long questionId,
                                         @Valid @RequestBody QuestionPatchDto questionPatchDto) {
         questionPatchDto.setQuestionId(questionId);
 
@@ -76,10 +78,11 @@ public class QuestionController {
 
     // 질문 삭제
     @DeleteMapping("{question-id}")
-    public ResponseEntity deleteQuestion(@PathVariable("question-id") long questionId) {
+    public ResponseEntity deleteQuestion(@PathVariable("question-id") long questionId,
+                                         QuestionDeleteDto questionDeleteDto) {
 
         questionService.deleteQuestion(questionId);
 
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(questionDeleteDto, HttpStatus.OK);
     }
 }
