@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/PRE35?serverTimezone=UTC&characterEncoding=UTF-8
-    username: root
-    password: aass0357!!
+    url: jdbc:mysql://pre035.chh5jixw7uel.ap-northeast-2.rds.amazonaws.com:3306/pre35db
+    username: master
+    password: abcd1234
 
   jpa:
     open-in-view: true
