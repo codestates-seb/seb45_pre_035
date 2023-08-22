@@ -18,4 +18,7 @@ export const SmallButton = styled.button`
   line-height: normal;
   cursor: pointer;
   border: unset;
+  &:hover {
+    background-color: #deb887;
+  }
 `;
