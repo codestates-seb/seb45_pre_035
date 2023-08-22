@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://pre35.chh5jixw7uel.ap-northeast-2.rds.amazonaws.com:3306
+    url: jdbc:mysql://pre035.chh5jixw7uel.ap-northeast-2.rds.amazonaws.com:3306/pre35db
     username: master
     password: abcd1234
 
