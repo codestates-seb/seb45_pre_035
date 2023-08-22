@@ -16,6 +16,28 @@ export const QuestionDetailContainer = styled.div`
     font-weight: 400;
     line-height: normal;
   }
+  .title-edit {
+    display: flex;
+    height: 49px;
+    padding: 10px 25px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 18px;
+    border: 2px solid #d9d9d9;
+    background: #f5f5f5;
+  }
+  .title-edit > input {
+    flex: 1 0 0;
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    background-color: unset;
+  }
   .author-container {
     display: flex;
     padding: 8px 0px;
@@ -148,5 +170,6 @@ export const QuestionDetailContainer = styled.div`
     border-radius: 18px;
     border: 2px solid #d9d9d9;
     background: #f5f5f5;
+    line-height: 180.5%;
   }
 `;

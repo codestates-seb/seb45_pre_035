@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const serverUrl = 'https://github.com/codestates-seb/seb45_pre_035';
+const serverUrl =
+  'http://ec2-13-209-7-250.ap-northeast-2.compute.amazonaws.com';
 
 export const api = (uri, method, data) => {
   const config = {

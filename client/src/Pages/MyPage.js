@@ -5,6 +5,7 @@ import QuestionListItem from '../Components/QuestionListItem';
 import BeforePage from '../Components/BeforePage';
 import ReactPagiNation from 'react-paginate';
 import { HomeBox, QuestionListContainer } from './styles/HomeBox';
+import { useSelector } from 'react-redux';
 
 export default function MyPage(props) {
   const [questions, setQuestions] = useState(
@@ -16,6 +17,8 @@ export default function MyPage(props) {
   const [currentQuestions, setCurrentQuestions] = useState([]); // 질문데이터 배열
   const pageCount = Math.ceil(questions.length / questionsPerPage);
 
+  const user = useSelector((state) => state.user);
+
   const handlePageChange = (event) => {
     setCurrentPage(event.selected + 1);
   };
@@ -23,8 +26,7 @@ export default function MyPage(props) {
   const fetchQuestions = async () => {
     try {
       // eslint-disable-next-line react/prop-types
-      const memberId = props.memberId;
-      const response = await api(`/questions/${memberId}`);
+      const response = await api(`/questions/${user.memberId}`);
 
       setQuestions(response.data);
     } catch (error) {

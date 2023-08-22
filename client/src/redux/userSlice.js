@@ -6,7 +6,7 @@ export const userSlice = createSlice({
     loggedIn: false,
     email: '',
     name: '',
-    memberId: 0,
+    memberId: 1,
   },
   reducers: {
     setUser: (state, action) => {
