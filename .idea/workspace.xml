@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b36ec17f-8cb3-4879-8051-9fc123b75fea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/jwt/JwtTokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/auth/jwt/JwtTokenizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/preproject_35/security/config/SecurityConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -255,7 +253,7 @@
       <workItem from="1692591736585" duration="13936000" />
       <workItem from="1692627573442" duration="36164000" />
       <workItem from="1692704170175" duration="11665000" />
-      <workItem from="1692750402965" duration="3567000" />
+      <workItem from="1692750402965" duration="4178000" />
     </task>
     <servers />
   </component>
