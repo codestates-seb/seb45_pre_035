@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/newquestion" element={<NewQuestion />} />
-          <Route path="/questiondetail/:id" element={<QuestionDetail />} />
+          <Route path="/questiondetail" element={<QuestionDetail />} />
         </Routes>
       </BrowserRouter>
     </>

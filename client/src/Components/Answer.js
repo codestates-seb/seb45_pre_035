@@ -26,16 +26,31 @@ const Answer = (props) => {
           'patch',
           { editedContent },
         );
-        if (response.success) {
+        if (response.data.success) {
           console.log(response);
-        } else {
-          // Handle error
+          setAnswer({
+            answerId: response.data.answerId,
+            content: response.data.content,
+            createdAt: response.data.createdAt,
+            author: response.data.author,
+            memberId: response.data.memberId,
+          });
         }
       } catch (error) {
         // Handle error
       }
     }
   };
+
+  const parsedDate = new Date(answer.createdAt).toLocaleDateString('ko-kr', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'UTC',
+  });
 
   return (
     <>
@@ -60,7 +75,7 @@ const Answer = (props) => {
                 </div>
               </div>
             ) : null}
-            <div className="time">{answer.createdAt}</div>
+            <div className="time">{parsedDate}</div>
           </div>
         </div>
         {editing ? (

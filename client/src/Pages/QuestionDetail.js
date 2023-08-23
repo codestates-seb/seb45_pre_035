@@ -10,22 +10,35 @@ import Answer from '../Components/Answer';
 import { api } from '../Api/api';
 import { useSelector } from 'react-redux';
 import { SmallButton } from '../Components/SmallButton';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-export default function QuestionDetail(props) {
+export default function QuestionDetail() {
   // eslint-disable-next-line no-unused-vars
+  const location = useLocation();
+  const questionData = location.state.question;
   const [question, setQuestion] = useState(
     // eslint-disable-next-line react/prop-types
-    props.question ? props.question : [],
+    questionData ? questionData : [],
   );
   const [answers, setAnswers] = useState(
-    props.question.answers ? props.question.answers : [],
+    question.answers ? question.answers : [],
   );
   const [editedContent, setEditedContent] = useState('');
   const [editedTitle, setEditedTitle] = useState('');
   const [editing, setEditing] = useState(false);
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
+  const [newAnswerContent, setNewAnswerContent] = useState('');
+
+  const parsedDate = new Date(question.createdAt).toLocaleDateString('ko-kr', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'UTC',
+  });
 
   const handleEdit = () => {
     setEditedContent(question.content);
@@ -39,12 +52,19 @@ export default function QuestionDetail(props) {
       setEditing(false);
       setEditedContent('');
       try {
-        const response = await api(`/questions/${props.questionId}`, 'patch', {
-          editedContent,
-          editedTitle,
-        });
-        if (response.success) {
+        const response = await api(
+          `/questions/${question.questionId}`,
+          'patch',
+          {
+            editedContent,
+            editedTitle,
+          },
+        );
+        if (response.data.success) {
           console.log(response);
+          setQuestion({
+            ...response.data,
+          });
         } else {
           // Handle error
         }
@@ -61,11 +81,11 @@ export default function QuestionDetail(props) {
     setAnswers(updatedAnswers);
     try {
       const response = await api(
-        `questions/${props.questionId}/answers/${answerId}`,
+        `questions/${question.questionId}/answers/${answerId}`,
         'delete',
       );
-      if (response.success) {
-        console.log(response.message);
+      if (response.data.success) {
+        console.log(response.data.message);
       } else {
         // Handle error
       }
@@ -75,8 +95,8 @@ export default function QuestionDetail(props) {
   };
   const handleDeleteQuestion = async (questionId) => {
     try {
-      const response = await api(`questions/${props.questionId}`, 'delete');
-      if (response.success) {
+      const response = await api(`questions/${questionId}`, 'delete');
+      if (response.data.success) {
         console.log(response.message);
       } else {
         // Handle error
@@ -88,6 +108,33 @@ export default function QuestionDetail(props) {
     navigate(-1);
   };
 
+  const handleSubmit = async () => {
+    try {
+      const response = await api(
+        `/questions/${question.questionId}/answers`,
+        'post',
+        newAnswerContent,
+      );
+      if (response.data.success) {
+        console.log(response.data.message);
+        setAnswers([
+          ...answers,
+          {
+            answerId: response.data.answerId,
+            content: response.data.content,
+            createdAt: response.data.createdAt,
+            author: response.data.author,
+            memberId: response.data.memberId,
+          },
+        ]);
+      } else {
+        // Handle error
+      }
+    } catch (error) {
+      // Handle error
+      console.log('서버에 답변등록 요청은 보냇음');
+    }
+  };
   return (
     <PageStyle>
       <BeforePage></BeforePage>
@@ -123,7 +170,7 @@ export default function QuestionDetail(props) {
                 </div>
               </div>
             ) : null}
-            <div className="time">{question.createdAt}</div>
+            <div className="time">{parsedDate}</div>
           </div>
         </div>
         {editing ? (
@@ -152,7 +199,7 @@ export default function QuestionDetail(props) {
               <div>
                 <img src="/images/message.png" alt=""></img>
               </div>
-              <div>{question.comments.length}</div>
+              {/* <div>{question.comments.length}</div> */}
             </div>
             <Like
               likes_count={question.likes_count}
@@ -162,7 +209,7 @@ export default function QuestionDetail(props) {
           </div>
         </div>
 
-        <div className="title">{question.answers.length} Answer</div>
+        <div className="title">{answers.length} Answer</div>
         {answers.map((answer) => {
           return (
             <Answer
@@ -175,9 +222,16 @@ export default function QuestionDetail(props) {
         })}
         <div className="new-answer-container">
           <div className="title">Your Answer</div>
-          <textarea className="answer-input" type="text"></textarea>
+          <textarea
+            className="answer-input"
+            type="text"
+            onChange={(e) => setNewAnswerContent(e.target.value)}
+            value={newAnswerContent}
+          ></textarea>
           <div className="submit-container">
-            <Button primary>Submit</Button>
+            <Button primary onClick={() => handleSubmit()}>
+              Submit
+            </Button>
           </div>
         </div>
       </QuestionDetailContainer>

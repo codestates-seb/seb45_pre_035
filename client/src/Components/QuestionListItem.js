@@ -14,7 +14,7 @@ const QuestionItem = ({ question }) => {
   const navigate = useNavigate();
 
   const questiondetail = () => {
-    navigate('/questiondetail/:id');
+    navigate('/questiondetail', { state: { question } });
   };
   const parsedDate = new Date(question.createdAt).toLocaleDateString('ko-kr', {
     year: 'numeric',

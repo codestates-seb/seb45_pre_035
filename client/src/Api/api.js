@@ -5,6 +5,8 @@ const serverUrl =
 
 export const api = (uri, method, data) => {
   const token = localStorage.getItem('token');
+  console.log(token);
+  console.log(data);
   const config = {
     method: method ? method : 'get',
     url: serverUrl + uri,

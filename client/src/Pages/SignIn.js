@@ -31,7 +31,7 @@ export default function SignIn() {
   };
   const onChangeHandlerPassword = (e) => {
     setPassword(e.target.value);
-    if (e.target.value.length < 8) {
+    if (e.target.value.length < 3) {
       setPasswordIsValid(false);
     } else {
       setPasswordIsValid(true);
@@ -40,18 +40,24 @@ export default function SignIn() {
 
   const signIn = async () => {
     if (idIsValid && passwordIsValid) {
-      api('/signin', 'post', { id, password })
+      api('/signin', 'post', { email: id, password })
         .then((response) => {
-          console.log(response.data.message);
           if (response.data.success) {
-            dispatch(setUser(response.data));
+            dispatch(
+              setUser({
+                loggedIn: true,
+                email: response.data.email,
+                name: response.data.username,
+                memberId: response.data.memberId,
+              }),
+            );
             // 응답 헤더 정보 가져오기
             const headers = response.headers;
-
             // 특정 헤더 값 가져오기 (예: Content-Type)
             const jwt = headers['authorization'];
             localStorage.setItem('token', jwt);
             console.log(jwt);
+            navigate('/');
           }
         })
         .catch((error) => {

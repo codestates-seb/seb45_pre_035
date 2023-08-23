@@ -25,7 +25,7 @@ const TitleBox = styled.div`
   border: 2px solid #3f2305;
   background: #f2ead3;
 `;
-const TitleBoxTitle = styled.text`
+const TitleBoxTitle = styled.div`
   color: #000;
   font-family: Inter;
   font-size: 32px;
@@ -33,7 +33,7 @@ const TitleBoxTitle = styled.text`
   font-weight: 400;
   line-height: normal;
 `;
-const TitleBoxEx = styled.text`
+const TitleBoxEx = styled.div`
   color: #000;
   font-family: Inter;
   font-size: 14px;
@@ -64,7 +64,7 @@ const ContentBox = styled.div`
   background: #f2ead3;
 `;
 
-const ContentBoxTitle = styled.text`
+const ContentBoxTitle = styled.div`
   color: #000;
   font-family: Inter;
   font-size: 32px;
@@ -72,7 +72,7 @@ const ContentBoxTitle = styled.text`
   font-weight: 400;
   line-height: normal;
 `;
-const ContentBoxEx = styled.text`
+const ContentBoxEx = styled.div`
   color: #000;
   font-family: Inter;
   font-size: 14px;
@@ -116,11 +116,11 @@ const NewQuestion = () => {
     if (!submitEnabled) return;
 
     try {
-      const response = await api('/api/questions', 'post', { title, content });
-
-      if (response.success) {
-        const question = await response.json();
-        navigate.push(`/question/${question.questionId}`);
+      const response = await api('/questions', 'post', { title, content });
+      console.log(response);
+      if (response.data.success) {
+        const question = response.data.question;
+        navigate(`/questiondetail`, { state: { question } });
       } else {
         // Handle error
       }

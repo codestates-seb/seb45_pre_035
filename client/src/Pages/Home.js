@@ -25,6 +25,7 @@ export default function Home(props) {
       const response = await api('/questions');
 
       setQuestions(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error('Error fetching questions:', error);
     }
