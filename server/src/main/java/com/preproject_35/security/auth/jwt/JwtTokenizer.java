@@ -39,8 +39,16 @@ public class JwtTokenizer {
     public String generateAccessToken(Map<String, Object> claims,
                                       String subject,
                                       Date expiration,
-                                      String base64EncodedSecretKey) {
+                                      String base64EncodedSecretKey,
+                                      Long memberId,
+                                      String email,
+                                      String username) {
         Key key = getKeyFromBase64EncodedKey(base64EncodedSecretKey); // Base64 형식 Secret Key 문자열을 이용해 Key(java.security.Key) 객체를 얻습니다.
+
+        // 클레임에 멤버 ID와 이메일을 추가합니다.
+        claims.put("memberId", memberId);
+        claims.put("email", email);
+        claims.put("username", username);
 
         return Jwts.builder()
                 .setClaims(claims) // 주로 인증된 사용자와 관련된 정보를 추가
