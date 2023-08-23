@@ -1,5 +1,11 @@
 package com.preproject_35.security.login;
 
+import com.preproject_35.element.member.entity.Member;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class LoginResponseDto {
     private boolean success;
     private String message;
@@ -7,7 +13,8 @@ public class LoginResponseDto {
     private String email;
     private long memberId;
 
-    public LoginResponseDto() {}
+    public LoginResponseDto() {
+    }
 
     public LoginResponseDto(boolean success, String message, String username, String email, long memberId) {
         this.success = success;
@@ -17,43 +24,13 @@ public class LoginResponseDto {
         this.memberId = memberId;
     }
 
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(long memberId) {
-        this.memberId = memberId;
+    public static LoginResponseDto fromMember(Member member, boolean success, String message) {
+        return new LoginResponseDto(
+                success,
+                message,
+                member.getUsername(),
+                member.getEmail(),
+                member.getMemberId()
+        );
     }
 }
