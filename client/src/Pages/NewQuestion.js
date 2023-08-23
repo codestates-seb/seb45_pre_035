@@ -119,7 +119,7 @@ const NewQuestion = () => {
       const response = await api('/questions', 'post', { title, content });
       console.log(response);
       if (response.data.success) {
-        const question = response.data.question;
+        const question = response.data;
         navigate(`/questiondetail`, { state: { question } });
       } else {
         // Handle error

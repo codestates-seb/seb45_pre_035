@@ -55,13 +55,13 @@ export default function SignUp() {
 
   const signUp = async () => {
     if (idIsValid && passwordIsValid && password2IsValid && nameIsValid) {
-      api('/members/signup', 'post', { id, password })
+      api('/members/signup', 'post', { email: id, password, username: name })
         .then((response) => {
           console.log(response.data.message);
-          if (response.data.success) {
-            alert('회원가입에 성공하셨습니다.');
-            navigate('/signin');
-          }
+          alert('회원가입에 성공하셨습니다.');
+          navigate('/signin');
+          // if (response.data.success) {
+          // }
         })
         .catch((error) => {
           // Handle any errors
