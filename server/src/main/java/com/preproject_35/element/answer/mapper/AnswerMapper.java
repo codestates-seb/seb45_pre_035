@@ -50,4 +50,17 @@ public interface AnswerMapper {
         answerResponseDto.setMemberId(answer.getMember().getMemberId());
         return answerResponseDto;
     }
+
+    default AnswerResponseDto answerToAnswerResponseDto(Answer answer) {
+        AnswerResponseDto answerResponseDto = new AnswerResponseDto();
+        answerResponseDto.setSuccess(true);
+        answerResponseDto.setMessage("답변이 조회되었습니다.");
+        answerResponseDto.setAnswerId(answer.getAnswerId());
+        answerResponseDto.setContent(answer.getContent());
+        answerResponseDto.setCreateAt(answer.getCreatedAt());
+        answerResponseDto.setAuthor(answer.getMember().getUsername());
+        answerResponseDto.setMemberId(answer.getMember().getMemberId());
+        return answerResponseDto;
+    }
+
 }

@@ -52,6 +52,9 @@ public class Question {
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
+    @OneToMany(mappedBy = "question")
+    private List<Answer> answers = new ArrayList<>();
+
     // Question 에서 QuestionComment 정보 조회 : 양방향 매핑
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<QuestionComment> questionComments = new ArrayList<>();
