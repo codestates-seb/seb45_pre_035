@@ -38,7 +38,7 @@ const QuestionItem = ({ question }) => {
             <div>
               <img src="/images/message.png" alt="" />
             </div>
-            <span>{question.comments.length}</span>
+            {/* <span>{question.comments.length}</span> */}
           </div>
 
           <div>

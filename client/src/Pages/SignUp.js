@@ -55,7 +55,7 @@ export default function SignUp() {
 
   const signUp = async () => {
     if (idIsValid && passwordIsValid && password2IsValid && nameIsValid) {
-      api('/signin', 'post', { id, password })
+      api('/signup', 'post', { id, password })
         .then((response) => {
           console.log(response.data.message);
           if (response.data.success) {

@@ -45,6 +45,13 @@ export default function SignIn() {
           console.log(response.data.message);
           if (response.data.success) {
             dispatch(setUser(response.data));
+            // 응답 헤더 정보 가져오기
+            const headers = response.headers;
+
+            // 특정 헤더 값 가져오기 (예: Content-Type)
+            const jwt = headers['authorization'];
+            localStorage.setItem('token', jwt);
+            console.log(jwt);
           }
         })
         .catch((error) => {
