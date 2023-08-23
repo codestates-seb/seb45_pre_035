@@ -10,8 +10,8 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 public class AnswerPostDto {
     // 답변 등록 시, 입력 받아야 할 것
-    @Email
-    private String email;
+    //@Email
+    //private String email;
     @NotBlank
     private String content;
 }

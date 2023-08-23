@@ -12,10 +12,10 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface AnswerMapper {
     // post content 와 Question 과 Member 정보가 연관된 Answer 객체로 변환하는 mapper
-    default Answer answerPostDtoToAnswer(AnswerPostDto answerPostDto, Question question, Member member) {
+    default Answer answerPostDtoToAnswer(AnswerPostDto answerPostDto, Question question) {
         Answer answer = new Answer();
         answer.setQuestion(question);
-        answer.setMember(member);
+        //answer.setMember(member);
         answer.setContent(answerPostDto.getContent());
         return answer;
     }
@@ -34,8 +34,8 @@ public interface AnswerMapper {
         answerResponseDto.setAnswerId(answer.getAnswerId());
         answerResponseDto.setContent(answer.getContent());
         answerResponseDto.setCreateAt(answer.getCreatedAt());
-        answerResponseDto.setAuthor(answer.getMember().getUsername());
-        answerResponseDto.setMemberId(answer.getMember().getMemberId());
+        //answerResponseDto.setAuthor(answer.getMember().getUsername());
+        //answerResponseDto.setMemberId(answer.getMember().getMemberId());
         return answerResponseDto;
     }
 

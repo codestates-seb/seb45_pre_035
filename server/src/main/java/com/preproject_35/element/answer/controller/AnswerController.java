@@ -40,10 +40,11 @@ public class AnswerController {
     public ResponseEntity postAnswer(@PathVariable("question-id") @Positive long questionId,
                                      @Valid @RequestBody AnswerPostDto answerPostDto) throws ChangeSetPersister.NotFoundException {
         Optional<Question> findQuestion = questionRepository.findByQuestionId(questionId);
-        Optional <Member> findMember = memberRepository.findByEmail(answerPostDto.getEmail());
+        //Optional <Member> findMember = memberRepository.findByEmail(answerPostDto.getEmail());
         Question question = findQuestion.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
-        Member member = findMember.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
-        Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto, question, member);
+        //Member member = findMember.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
+       // Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto, question, member);
+        Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto, question);
         answerService.createAnswer(answer);
 
         AnswerResponseDto answerResponseDto = answerMapper.answerToAnswerPostResponseDto(answer);
