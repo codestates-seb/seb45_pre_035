@@ -75,12 +75,13 @@ public class SecurityConfiguration {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(Arrays.asList("*"));
         configuration.setAllowedMethods(Arrays.asList("GET","POST", "PATCH", "DELETE"));
         configuration.setAllowedOrigins(Arrays.asList(
                 "http://munjaenow.s3-website.ap-northeast-2.amazonaws.com/",
                 "http://localhost:3000"
         ));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setAllowCredentials(true); // 인증 정보(Credentials)를 허용
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
