@@ -82,6 +82,8 @@ public class SecurityConfiguration {
         ));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true); // 인증 정보(Credentials)를 허용
+        configuration.setExposedHeaders(Arrays.asList("Authorization", "Refresh"));
+
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
