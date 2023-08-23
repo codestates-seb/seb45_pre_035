@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.preproject_35.element.member.entity.Member;
 import com.preproject_35.security.auth.jwt.JwtTokenizer;
 import com.preproject_35.security.login.LoginDto;
+import com.preproject_35.security.login.LoginResponseDto;
 import lombok.SneakyThrows;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -62,6 +63,12 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         // Access Token은 클라이언트 측에서 백엔드 애플리케이션 측에 요청을 보낼 때마다 request header에 추가해서 클라이언트 측의 자격을 증명하는 데 사용
         response.setHeader("Authorization", "Bearer " + accessToken);
         response.setHeader("Refresh", refreshToken);
+
+        // 응답 DTO 생성 및 설정
+        LoginResponseDto responseDto = new LoginResponseDto(true, member.getUsername() + "님 반갑습니다.", member.getUsername(), member.getEmail(), member.getMemberId());
+        ObjectMapper mapper = new ObjectMapper();
+        response.setContentType("application/json;charset=UTF-8");
+        response.getWriter().write(mapper.writeValueAsString(responseDto));
 
         this.getSuccessHandler().onAuthenticationSuccess(request, response, authResult);
     }
