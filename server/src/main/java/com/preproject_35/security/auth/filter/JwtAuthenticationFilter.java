@@ -1,7 +1,11 @@
 package com.preproject_35.security.auth.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+<<<<<<< HEAD
 import com.preproject_35.element.member.entity.Member;
+=======
+import com.preproject_35.element.member.Entity.Member;
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 import com.preproject_35.security.auth.jwt.JwtTokenizer;
 import com.preproject_35.security.login.LoginDto;
 import com.preproject_35.security.login.LoginResponseDto;

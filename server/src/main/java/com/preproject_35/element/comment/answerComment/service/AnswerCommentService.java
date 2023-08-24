@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 package com.preproject_35.answerComment.service;
 
 import com.preproject_35.answerComment.repository.AnswerCommentRepository;
+=======
+package com.preproject_35.element.comment.answerComment.service;
+
+import com.preproject_35.element.comment.answerComment.repository.AnswerCommentRepository;
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 import com.preproject_35.element.answer.entity.Answer;
 import com.preproject_35.element.answer.repository.AnswerRepository;
 import com.preproject_35.element.comment.answerComment.entitiy.AnswerComment;

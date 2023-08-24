@@ -1,9 +1,16 @@
 package com.preproject_35.security.auth.userdetails;
 
 
+<<<<<<< HEAD
 import com.preproject_35.element.error.BusinessLogicException;
 import com.preproject_35.element.error.ExceptionCode;
 import com.preproject_35.element.member.entity.Member;
+=======
+import com.preproject_35.element.member.Entity.Member;
+import com.preproject_35.element.error.BusinessLogicException;
+import com.preproject_35.element.error.ExceptionCode;
+
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 import com.preproject_35.element.member.Repository.MemberRepository;
 import com.preproject_35.security.utils.CustomAuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,7 +40,7 @@ public class MemberDetailsService implements UserDetailsService {
         return new MemberDetails(findMember);
     }
 
-    private final class MemberDetails extends Member implements UserDetails {
+    public final class MemberDetails extends Member implements UserDetails {
 
         MemberDetails(Member member) {
             setMemberId(member.getMemberId());

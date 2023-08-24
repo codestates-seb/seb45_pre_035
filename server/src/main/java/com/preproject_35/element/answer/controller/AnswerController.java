@@ -43,7 +43,7 @@ public class AnswerController {
         //Optional <Member> findMember = memberRepository.findByEmail(answerPostDto.getEmail());
         Question question = findQuestion.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
         //Member member = findMember.orElseThrow(() -> new ChangeSetPersister.NotFoundException());
-       // Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto, question, member);
+        // Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto, question, member);
         Answer answer = answerMapper.answerPostDtoToAnswer(answerPostDto, question);
         answerService.createAnswer(answer);
 

@@ -58,7 +58,7 @@ public class QuestionService {
     }
 
     // 존재하는 question 인지 검증
-    private Question findVerifiedQuestion(Long questionId) {
+    public Question findVerifiedQuestion(Long questionId) {
         Optional<Question> optionalQuestion =
                 questionRepository.findByQuestionId(questionId);
         Question findQuestion = optionalQuestion.orElse(null);

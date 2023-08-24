@@ -1,9 +1,15 @@
 package com.preproject_35.element.member.Controller;
 
-import com.preproject_35.element.member.Dto.MemberPostDto;
+
+import com.preproject_35.element.member.Entity.Member;
 import com.preproject_35.element.member.Mapper.MemberMapper;
+<<<<<<< HEAD
 import com.preproject_35.element.member.entity.Member;
+=======
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 import com.preproject_35.element.member.Service.MemberService;
+import com.preproject_35.element.member.Dto.MemberPostDto;
+
 import com.preproject_35.element.member.Dto.MemberResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

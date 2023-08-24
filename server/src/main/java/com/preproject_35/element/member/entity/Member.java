@@ -52,4 +52,3 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<QuestionComment> questionComments = new ArrayList<>();
 }
-

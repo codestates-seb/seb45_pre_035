@@ -2,8 +2,14 @@ package com.preproject_35.element.question.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.preproject_35.element.answer.entity.Answer;
+<<<<<<< HEAD
 import com.preproject_35.element.comment.questionComment.question.entity.QuestionComment;
 import com.preproject_35.element.member.entity.Member;
+=======
+import com.preproject_35.element.comment.question.entity.QuestionComment;
+
+import com.preproject_35.element.member.Entity.Member;
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,9 +34,10 @@ public class Question {
 
     private String username;
 
+    private long memberId;
+    private String username;
     @Column(nullable = false)
     private String title;
-
     @Column(nullable = false)
     private String content;
 
@@ -41,6 +48,14 @@ public class Question {
     // Question 에서만 Answer 정보 조회 : 1:N 단방향 엔티티 매핑
 //    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    private List<Answer> answers = new ArrayList<>();
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    private LocalDateTime createdAt = LocalDateTime.now();
+    private boolean success = true;
+
+    // Question 에서만 Answer 정보 조회 : 1:N 단방향 엔티티 매핑
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Answer> answers = new ArrayList<>();
 
     /**
      * cascade = CascadeType.ALL : 부모와 자식 엔티티를 한 번에 영속화 + 한번에 제거

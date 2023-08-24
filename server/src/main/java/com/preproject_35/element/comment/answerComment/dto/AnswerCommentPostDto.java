@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.preproject_35.answerComment.dto;
+=======
+package com.preproject_35.element.comment.answerComment.dto;
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +15,10 @@ import javax.validation.constraints.NotBlank;
 public class AnswerCommentPostDto {
     @Email
     private String email;
+<<<<<<< HEAD
 
     @NotBlank
+=======
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
     private String content;
 }

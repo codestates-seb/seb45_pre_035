@@ -1,8 +1,14 @@
 package com.preproject_35.element.answer.entity;
 
 
+<<<<<<< HEAD
 import com.preproject_35.element.comment.answerComment.entitiy.AnswerComment;
 import com.preproject_35.element.member.entity.Member;
+=======
+
+import com.preproject_35.element.comment.answerComment.entitiy.AnswerComment;
+import com.preproject_35.element.member.Entity.Member;
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 import com.preproject_35.element.question.entity.Question;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +32,7 @@ public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long answerId;  // 답변 ID
+<<<<<<< HEAD
 
     @ManyToOne
     @JoinColumn(name = "QUESTION_ID", nullable = false)
@@ -44,6 +51,24 @@ public class Answer {
     @LastModifiedDate
     private LocalDateTime modifiedAt;   // 답변 수정 시간
 
+=======
+
+    @ManyToOne
+    @JoinColumn(name = "question_Id", nullable = false)
+    private Question question;    // Question - 질문 ID와 매핑 (질문 1 : 답변 N)
+
+    @ManyToOne
+    @JoinColumn(name = "member_Id", nullable = false)
+    private Member member;  // Member - 멤버 ID와 매핑 (멤버 1 : 답변 N)
+
+    @Column(nullable = false)
+    private String content; // 답변 내용
+
+    @CreationTimestamp
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;    // 답변 생성 시간
+
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
     @OneToMany(mappedBy = "answer") // answer 엔티티의 필드명
     private List<AnswerComment> commentList = new ArrayList<>(); // AnswerComment와 매핑 (댓글 N : 답변 1)
 

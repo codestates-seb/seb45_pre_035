@@ -7,7 +7,10 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 import java.util.List;
 import java.util.stream.Collectors;
 

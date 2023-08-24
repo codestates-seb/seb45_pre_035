@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.preproject_35.answerComment.repository;
+=======
+package com.preproject_35.element.comment.answerComment.repository;
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 
 import com.preproject_35.element.answer.entity.Answer;
 import com.preproject_35.element.comment.answerComment.entitiy.AnswerComment;

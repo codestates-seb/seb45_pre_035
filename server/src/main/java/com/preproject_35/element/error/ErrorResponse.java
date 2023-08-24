@@ -2,7 +2,13 @@ package com.preproject_35.element.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+<<<<<<< HEAD
 
+=======
+import org.springframework.validation.FieldError;
+
+import java.util.ArrayList;
+>>>>>>> 3fdc87512dda1d97a862a485d2cd42939ef48555
 import java.util.List;
 
 @Getter
