@@ -1,21 +1,15 @@
-# seb45_pre_035
+# StackOverFlow Clone Coding
 
-Todo 관리를 위한 웹 애플리케이션입니다.
+프로그래밍 Q&A 웹사이트 ‘StackOverFlow’ 클론코딩 프로젝트
 
 ## Features
 
-- 편리한 UI로 Todo를 쉽게 생성하고 삭제할 수 있습니다.
-- Todo에 기한과 카테고리를 설정할 수 있습니다.
-- create-react-app으로 간편한 번들링과 배포가 가능합니다.
-- Spring Boot로 쉽게 서버 배포를 할 수 있습니다.
+- 이메일 형식의 ID로 회원가입 및 로그인을 할 수 있습니다.
+- 질문을 위한 게시글을 작성, 수정, 삭제, 조회할 수 있습니다.
+- 질문에 대한 답변을 등록, 수정, 삭제할 수 있습니다.
+- 질문과 답변 각각에 댓글을 작성, 수정, 삭제할 수 있습니다.
 
-## Contributors
 
-- FE: 김코딩, 박해커
-- BE: 나서버, 최디비
+## Table ERD
 
-## Project Wiki
-
-프로젝트 팀 정보, 기획, 아키텍쳐에 대한 자세한 안내입니다.
-
-https://www.notion.so/codestates/d73c3d7ec22642dab20575c6368fd794
+<img width="1110" alt="Untitled (1)" src="https://github.com/codestates-seb/seb45_pre_035/assets/129862727/749d29b1-1254-4600-b133-a97e45b86b7f">
